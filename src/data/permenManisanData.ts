@@ -1,23 +1,3 @@
-/**
- * Data Produk Permen & Manisan - Toko Lezat
- * 
- * File ini berisi data lengkap untuk 20 produk kategori Permen & Manisan
- * dengan informasi nama, harga, ukuran, dan gambar produk
- * 
- * Cara update:
- * 1. Untuk menambah produk baru, tambahkan objek baru ke array permenManisanProducts
- * 2. Untuk update harga, edit nilai di property price
- * 3. Untuk update ukuran, edit nilai di property weight
- * 4. Untuk update gambar, ganti path di property image
- * 
- * PENTING: Pastikan setelah update:
- * - Nama produk sesuai dengan label/kemasan
- * - Harga valid (tidak 0 atau negatif)
- * - Ukuran/berat tercantum dengan benar
- * - Path gambar sesuai dengan file yang ada di folder assets
- * - Kategori tetap "Permen & Manisan"
- */
-
 // Import gambar produk Permen & Manisan
 import jellyInacoMika from "@/assets/image/PERMEN & MANISAN/JELLY INACO MIKA.jpg";
 import permenJaheHotTpl from "@/assets/image/PERMEN & MANISAN/PERMEN JAHE HOT TPL.jpg";
@@ -43,24 +23,14 @@ import jellyRollTpl from "@/assets/image/PERMEN & MANISAN/JELLY ROLL TPL.jpg";
 export interface PermenManisanProduct {
   id: number;
   name: string;
-  price: number;     // harga dalam rupiah (integer)
+  price: number;     
   image: string;
   description: string;
   category: "Permen & Manisan";
-  weight: string;    // ukuran/berat produk (contoh: "730 gr", "500 gr")
+  weight: string;    
 }
 
-/**
- * Data lengkap 20 produk Permen & Manisan
- * Harga dan ukuran sesuai dengan data terbaru
- * 
- * CHECKLIST SETELAH UPDATE:
- * ✅ Nama produk sesuai dengan kemasan
- * ✅ Harga valid (> 0)
- * ✅ Ukuran/berat tercantum
- * ✅ Gambar tersedia di folder assets
- * ✅ Kategori = "Permen & Manisan"
- */
+
 export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2001,

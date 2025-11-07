@@ -5,9 +5,9 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Company Info */}
-          <div>
+          <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-red-600 flex items-center justify-center text-white font-black text-lg rounded-lg">
                 L
@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="text-lg font-bold mb-4 text-white">Kontak Kami</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
@@ -42,16 +42,31 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Operating Hours */}
-          <div>
+          {/* Operating Hours - Two Side by Side */}
+          <div className="md:col-span-2">
             <h4 className="text-lg font-bold mb-4 text-white">Jam Layanan</h4>
-            <div className="space-y-2">
-              <div className="flex items-center gap-3 text-gray-300">
-                <Clock className="h-4 w-4 text-red-400 flex-shrink-0" />
-                <div className="text-sm">
-                  <p>Senin - Jumat: 08:00 - 17:00</p>
-                  <p>Sabtu: 08:00 - 15:00</p>
-                  <p>Minggu: Tutup</p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {/* Toko Offline */}
+              <div className="bg-gray-800 p-4 rounded-lg">
+                <h5 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-red-400" />
+                  TOKO OFFLINE
+                </h5>
+                <div className="space-y-1 text-sm text-gray-300">
+                  <p className="font-semibold">Senin - Minggu</p>
+                  <p className="text-lg font-bold text-white">09.00 - 18.00 WIB</p>
+                </div>
+              </div>
+
+              {/* Toko Online */}
+              <div className="bg-gray-800 p-4 rounded-lg">
+                <h5 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-red-400" />
+                  TOKO ONLINE
+                </h5>
+                <div className="space-y-1 text-sm text-gray-300">
+                  <p className="font-semibold">Senin - Sabtu</p>
+                  <p className="text-lg font-bold text-white">09.00 - 17.00 WIB</p>
                 </div>
               </div>
             </div>

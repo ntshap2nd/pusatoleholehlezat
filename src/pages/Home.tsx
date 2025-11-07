@@ -17,6 +17,8 @@ import { snackKiloanProducts } from "@/data/snackKiloanData";
 import { permenManisanProducts } from "@/data/permenManisanData";
 import { keripikProducts } from "@/data/keripikData";
 import { kacangProducts } from "@/data/kacangData";
+import { palmaProducts } from "@/data/palmaData";
+import { palmaCurahProducts } from "@/data/palmaCurahData";
 
 // Kue Kering imports
 import susCoklat from "@/assets/image/KUE KERING/1_SUS COKLAT.jpg";
@@ -925,6 +927,26 @@ const allProducts: Product[] = [
     description: product.description,
     category: product.category,
     weight: product.weight
+  })),
+  // PALMA - imported from palmaData
+  ...palmaProducts.map(product => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    description: product.description,
+    category: product.category,
+    weight: product.weight
+  })),
+  // PALMA CURAH - imported from palmaCurahData (kiloan products)
+  ...palmaCurahProducts.map(product => ({
+    id: product.id,
+    name: product.name,
+    price: product.basePrice, // Use basePrice for display
+    image: product.image,
+    description: product.description,
+    category: product.category,
+    weight: "Per Kg"
   }))
 ];
 
@@ -1240,6 +1262,28 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
               >
                 {selectedCategory === 'Kacang-kacangan' && <Check className="w-4 h-4" />}
                 Kacang-kacangan
+              </button>
+              <button 
+                onClick={() => handleCategoryClick('PALMA')}
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
+                  selectedCategory === 'PALMA' 
+                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {selectedCategory === 'PALMA' && <Check className="w-4 h-4" />}
+                PALMA
+              </button>
+              <button 
+                onClick={() => handleCategoryClick('PALMA CURAH')}
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
+                  selectedCategory === 'PALMA CURAH' 
+                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {selectedCategory === 'PALMA CURAH' && <Check className="w-4 h-4" />}
+                PALMA CURAH
               </button>
               <button 
                 onClick={() => handleCategoryClick('Snack Kiloan')}

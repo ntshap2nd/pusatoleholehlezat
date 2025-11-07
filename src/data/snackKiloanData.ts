@@ -1,14 +1,4 @@
-/**
- * Data Produk Snack Kiloan - Toko Lezat
- * 
- * File ini berisi data lengkap untuk 32 produk kategori Snack Kiloan
- * dengan harga untuk 3 ukuran: 1/4kg, 1/2kg, dan 1kg
- * 
- * Cara update:
- * 1. Untuk menambah produk baru, tambahkan objek baru ke array snackKiloanProducts
- * 2. Untuk update harga, edit nilai di weightOptions
- * 3. Untuk update gambar, ganti path di property image
- */
+
 
 // Import gambar produk snack kiloan
 import planetNanas from "@/assets/image/SNACK KILOAN/PLANET NANAS KELINCI.jpg";
@@ -58,10 +48,7 @@ export interface SnackKiloanProduct {
   }[];
 }
 
-/**
- * Data lengkap 32 produk Snack Kiloan
- * Harga sesuai dengan data dari tabel yang diberikan
- */
+
 export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1001,

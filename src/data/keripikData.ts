@@ -1,9 +1,3 @@
-/**
- * Data Produk Keripik - Toko Lezat
- * File ini berisi data lengkap untuk 60 produk kategori Keripik
- */
-
-// Import gambar produk Keripik
 import potelTumbarMini from "@/assets/image/KERIPIK/POTEL TUMBAR MINI.jpg";
 import lantingKeju from "@/assets/image/KERIPIK/LANTING KEJU.jpg";
 import lantingUdang from "@/assets/image/KERIPIK/LANTING UDANG.jpg";

@@ -14,6 +14,8 @@ import { snackKiloanProducts } from "@/data/snackKiloanData";
 import { permenManisanProducts } from "@/data/permenManisanData";
 import { keripikProducts } from "@/data/keripikData";
 import { kacangProducts } from "@/data/kacangData";
+import { palmaProducts } from "@/data/palmaData";
+import { palmaCurahProducts } from "@/data/palmaCurahData";
 
 // Kue Kering imports
 import susCoklat from "@/assets/image/KUE KERING/1_SUS COKLAT.jpg";
@@ -914,6 +916,26 @@ const products: Product[] = [
     description: product.description,
     category: product.category,
     weight: product.weight
+  })),
+  // PALMA - imported from palmaData
+  ...palmaProducts.map(product => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    description: product.description,
+    category: product.category,
+    weight: product.weight
+  })),
+  // PALMA CURAH - imported from palmaCurahData (kiloan products)
+  ...palmaCurahProducts.map(product => ({
+    id: product.id,
+    name: product.name,
+    price: product.basePrice, // Use basePrice for display (per kg)
+    image: product.image,
+    description: product.description,
+    category: product.category,
+    weight: "Per Kg" // Kiloan products show "Per Kg"
   }))
 ];
 
@@ -923,7 +945,7 @@ const products: Product[] = [
 // Debug log untuk memastikan data ter-load
 console.log('🔍 Products.tsx - snackKiloanProducts loaded:', snackKiloanProducts.length);
 
-const categories = ["Semua", "Kue Kering", "Keripik", "Permen & Manisan", "Bakpia dan Kue Basah", "Kacang-kacangan", "Snack Kiloan", "Minuman", "Lain-lain"];
+const categories = ["Semua", "Kue Kering", "Keripik", "Permen & Manisan", "Bakpia dan Kue Basah", "Kacang-kacangan", "PALMA", "PALMA CURAH", "Snack Kiloan", "Minuman", "Lain-lain"];
 
 interface ProductsPageProps {
   cartItems: CartItem[];
