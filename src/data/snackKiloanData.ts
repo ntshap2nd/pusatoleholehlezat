@@ -89,7 +89,7 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
       { weight: 1, price: 105000, label: "1 kg" }
     ]
   },
-  {
+  { 
     id: 1004,
     name: "COKLAT KACANG KELINCI",
     basePrice: 100000,

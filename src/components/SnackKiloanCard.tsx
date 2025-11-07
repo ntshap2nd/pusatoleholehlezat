@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Plus, Eye } from "lucide-react";
 
-export interface SnackKiloanProduct {
+// Generic interface for kiloan products
+export interface KiloanProduct {
   id: number;
   name: string;
   basePrice: number; // harga per kg
   image: string;
   description: string;
-  category: "Snack Kiloan";
+  category: "Snack Kiloan" | "PALMA CURAH";
   weightOptions: {
     weight: number; // dalam kg
     price: number;
     label: string;
   }[];
+}
+
+export interface SnackKiloanProduct extends KiloanProduct {
+  category: "Snack Kiloan";
 }
 
 export interface SnackKiloanCartItem {
@@ -22,14 +27,14 @@ export interface SnackKiloanCartItem {
   image: string;
   weightKg: number; // berat dalam kg
   quantity: number;
-  category: "Snack Kiloan";
+  category: "Snack Kiloan" | "PALMA CURAH";
   description: string;
 }
 
 interface SnackKiloanCardProps {
-  product: SnackKiloanProduct;
+  product: KiloanProduct;
   onAddToCart: (item: SnackKiloanCartItem) => void;
-  onViewDetail?: (product: SnackKiloanProduct) => void;
+  onViewDetail?: (product: KiloanProduct) => void;
 }
 
 export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: SnackKiloanCardProps) {
@@ -46,7 +51,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
       image: product.image,
       weightKg: selectedWeight.weight,
       quantity: quantity,
-      category: "Snack Kiloan",
+      category: product.category, // Use the product's actual category
       description: product.description
     };
     onAddToCart(cartItem);
@@ -69,11 +74,6 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
         {/* Eye Icon Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
           <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-        
-        {/* Snack Kiloan Badge */}
-        <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold shadow-md">
-          Kiloan
         </div>
       </div>
 

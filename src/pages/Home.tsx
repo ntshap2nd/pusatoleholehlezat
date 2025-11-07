@@ -19,6 +19,7 @@ import { keripikProducts } from "@/data/keripikData";
 import { kacangProducts } from "@/data/kacangData";
 import { palmaProducts } from "@/data/palmaData";
 import { palmaCurahProducts } from "@/data/palmaCurahData";
+import { lainLainProducts } from "@/data/lainLainData";
 
 // Kue Kering imports
 import susCoklat from "@/assets/image/KUE KERING/1_SUS COKLAT.jpg";
@@ -947,6 +948,16 @@ const allProducts: Product[] = [
     description: product.description,
     category: product.category,
     weight: "Per Kg"
+  })),
+  // Lain-lain - imported from lainLainData
+  ...lainLainProducts.map(product => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    description: product.description,
+    category: product.category,
+    weight: product.weight
   }))
 ];
 
@@ -1085,6 +1096,29 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
     }
     
     // For "Semua" category, only show 2 random snack kiloan products if no search
+    if (selectedCategory === "Semua" && !searchQuery.trim()) {
+      return products.sort(() => 0.5 - Math.random()).slice(0, 2);
+    }
+    
+    return products;
+  })();
+
+  // Filter PALMA CURAH products with search
+  const filteredPalmaCurah = (() => {
+    let products = selectedCategory === "Semua" || selectedCategory === "PALMA CURAH"
+      ? palmaCurahProducts
+      : [];
+    
+    // Apply search filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      products = products.filter(product =>
+        product.name.toLowerCase().includes(query) ||
+        (product.description && product.description.toLowerCase().includes(query))
+      );
+    }
+    
+    // For "Semua" category, only show 2 random PALMA CURAH products if no search
     if (selectedCategory === "Semua" && !searchQuery.trim()) {
       return products.sort(() => 0.5 - Math.random()).slice(0, 2);
     }
@@ -1322,7 +1356,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
             </div>
 
             {/* Empty State - No Results Found */}
-            {filteredProducts.length === 0 && filteredSnackKiloan.length === 0 && !isLoading && (
+            {filteredProducts.length === 0 && filteredSnackKiloan.length === 0 && filteredPalmaCurah.length === 0 && !isLoading && (
               <div className="text-center py-12 px-4">
                 <div className="max-w-md mx-auto">
                   <div className="text-6xl mb-4">🔍</div>
@@ -1378,7 +1412,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
             )}
 
             {/* Products Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
-            {(filteredProducts.length > 0 || filteredSnackKiloan.length > 0) && !isLoading && (
+            {(filteredProducts.length > 0 || filteredSnackKiloan.length > 0 || filteredPalmaCurah.length > 0) && !isLoading && (
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
                 {/* Regular Products - Only show if there are products */}
                 {filteredProducts.map((product) => (
@@ -1485,6 +1519,16 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
               
               {/* Snack Kiloan Products */}
               {filteredSnackKiloan.map((product) => (
+                <SnackKiloanCard 
+                  key={product.id} 
+                  product={product} 
+                  onAddToCart={handleSnackKiloanAddToCart}
+                  onViewDetail={handleSnackKiloanClick}
+                />
+              ))}
+
+              {/* PALMA CURAH Products - using same card as Snack Kiloan */}
+              {filteredPalmaCurah.map((product) => (
                 <SnackKiloanCard 
                   key={product.id} 
                   product={product} 

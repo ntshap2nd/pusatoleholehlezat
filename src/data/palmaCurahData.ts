@@ -27,14 +27,14 @@ import boluPanggangMarmerMiniMiki from "@/assets/image/PALMA CURAH/BOLU PANGGANG
 export interface PalmaCurahProduct {
   id: number;
   name: string;
-  basePrice: number; // harga per kg untuk referensi
+  basePrice: number; 
   image: string;
   description: string;
   category: "PALMA CURAH";
   weightOptions: {
-    weight: number; // dalam kg
-    price: number;  // harga dalam rupiah (integer)
-    label: string;  // label untuk ditampilkan
+    weight: number; 
+    price: number;  
+    label: string;  
   }[];
 }
 
