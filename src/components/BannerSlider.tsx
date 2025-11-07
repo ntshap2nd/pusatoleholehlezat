@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import bannerWebShop1 from "@/assets/Banner_Web-Shop_Banner 1.jpg";
 import bannerWebShop2 from "@/assets/Banner_Web-Shop_Banner 2.jpg";
 import bannerWebShop3 from "@/assets/Banner_Web-Shop_Banner 3.jpg";
@@ -8,24 +9,29 @@ import bannerWebShop4 from "@/assets/Banner_Web-Shop_Banner 4.jpg";
 const bannerSlides = [
   {
     id: 1,
-    image: bannerWebShop1
+    image: bannerWebShop1,
+    category: null // No link for banner 1
   },
   {
     id: 2,
-    image: bannerWebShop2
+    image: bannerWebShop2,
+    category: "PALMA" // Bolu Panggang -> PALMA
   },
   {
     id: 3,
-    image: bannerWebShop3
+    image: bannerWebShop3,
+    category: null // No link for banner 3
   },
   {
     id: 4,
-    image: bannerWebShop4
+    image: bannerWebShop4,
+    category: "Lain-lain" // Tas Belanja -> Lain-lain
   }
 ];
 
 export default function BannerSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Auto-slide every 8 seconds
@@ -48,6 +54,15 @@ export default function BannerSlider() {
     setCurrentSlide(index);
   };
 
+  const handleBannerClick = (category: string | null) => {
+    if (category) {
+      // Navigate to products page with category filter
+      navigate(`/products?category=${encodeURIComponent(category)}`);
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-black w-full">
       {/* Banner Container dengan aspek rasio 1024:600 (landscape) */}
@@ -65,7 +80,12 @@ export default function BannerSlider() {
             style={{ willChange: index === currentSlide ? 'opacity, transform' : 'auto' }}
           >
             {/* Background Image - Full Cover tanpa crop */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black">
+            <div 
+              className={`absolute inset-0 flex items-center justify-center bg-black ${
+                slide.category ? 'cursor-pointer' : ''
+              }`}
+              onClick={() => handleBannerClick(slide.category)}
+            >
               <img
                 src={slide.image}
                 alt={`Banner ${slide.id}`}

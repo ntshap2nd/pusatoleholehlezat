@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import BannerSlider from "@/components/BannerSlider";
 import GoogleReviews from "@/components/GoogleReviews";
-import Footer from "@/components/Footer";
+import FooterNew from "@/components/FooterNew";
 import CartModal, { CartItem } from "@/components/CartModal";
 import UserDataModal from "@/components/UserDataModal";
 import ProductDetailModal from "@/components/ProductDetailModal";
@@ -939,16 +939,6 @@ const allProducts: Product[] = [
     category: product.category,
     weight: product.weight
   })),
-  // PALMA CURAH - imported from palmaCurahData (kiloan products)
-  ...palmaCurahProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    price: product.basePrice, // Use basePrice for display
-    image: product.image,
-    description: product.description,
-    category: product.category,
-    weight: "Per Kg"
-  })),
   // Lain-lain - imported from lainLainData
   ...lainLainProducts.map(product => ({
     id: product.id,
@@ -1583,7 +1573,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
         </div>
       </main>
       
-      <Footer />
+      <FooterNew />
 
       {/* Floating Checkout Button - Hide when modals are open */}
       {getTotalItemsInCart() > 0 && !isUserDataModalOpen && !isCartOpen && (

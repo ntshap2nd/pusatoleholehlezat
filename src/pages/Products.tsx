@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Plus, Minus, ShoppingCart, Check, ArrowUp, Eye } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import FooterNew from "@/components/FooterNew";
 import CartModal, { CartItem } from "@/components/CartModal";
 import FloatingCheckoutButton from "@/components/FloatingCheckoutButton";
 import UserDataModal from "@/components/UserDataModal";
@@ -928,16 +928,6 @@ const products: Product[] = [
     category: product.category,
     weight: product.weight
   })),
-  // PALMA CURAH - imported from palmaCurahData (kiloan products)
-  ...palmaCurahProducts.map(product => ({
-    id: product.id,
-    name: product.name,
-    price: product.basePrice, // Use basePrice for display (per kg)
-    image: product.image,
-    description: product.description,
-    category: product.category,
-    weight: "Per Kg" // Kiloan products show "Per Kg"
-  })),
   // Lain-lain - imported from lainLainData
   ...lainLainProducts.map(product => ({
     id: product.id,
@@ -1423,7 +1413,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         )}
       </main>
 
-      <Footer />
+      <FooterNew />
 
       {/* Floating Checkout Button - Hide when modals are open */}
       {totalItems > 0 && !isUserDataModalOpen && !isCartOpen && (

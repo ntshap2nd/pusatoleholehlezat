@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import FooterNew from "@/components/FooterNew";
 import CartModal, { CartItem } from "@/components/CartModal";
 import FloatingCheckoutButton from "@/components/FloatingCheckoutButton";
 import UserDataModal from "@/components/UserDataModal";
@@ -1125,7 +1125,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         )}
       </main>
 
-      <Footer />
+      <FooterNew />
 
       {/* Floating Checkout Button */}
       {totalItems > 0 && (

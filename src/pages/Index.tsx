@@ -5,7 +5,7 @@ import ProductCategories from "@/components/ProductCategories";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import ContactLocation from "@/components/ContactLocation";
-import Footer from "@/components/Footer";
+import FooterNew from "@/components/FooterNew";
 import CartModal, { CartItem } from "@/components/CartModal";
 import FloatingCheckoutButton from "@/components/FloatingCheckoutButton";
 import UserDataModal from "@/components/UserDataModal";
@@ -121,7 +121,7 @@ const Index = () => {
         <ContactLocation />
       </main>
       
-      <Footer />
+      <FooterNew />
       
       {/* Floating Checkout Button */}
       <FloatingCheckoutButton 

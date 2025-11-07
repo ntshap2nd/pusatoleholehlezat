@@ -2,7 +2,7 @@ import { MapPin, Phone, Clock, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import FooterNew from "@/components/FooterNew";
 
 export default function LocationPage() {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function LocationPage() {
         </div>
       </main>
 
-      <Footer />
+      <FooterNew />
     </div>
   );
 }
