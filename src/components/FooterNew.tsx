@@ -18,10 +18,15 @@ export default function Footer() {
                 <Phone className="h-5 w-5 flex-shrink-0" />
                 <span className="text-base">(0293) 313131</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-3">
+              <a 
+                href="https://www.instagram.com/tokolezatmagelang/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center md:justify-start gap-3 hover:text-yellow-300 transition-colors cursor-pointer"
+              >
                 <Instagram className="h-5 w-5 flex-shrink-0" />
                 <span className="text-base">tokolezatmagelang</span>
-              </div>
+              </a>
             </div>
           </div>
 

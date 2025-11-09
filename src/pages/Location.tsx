@@ -1,11 +1,13 @@
 import { MapPin, Phone, Clock, Instagram, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Header from "@/components/Header";
 import FooterNew from "@/components/FooterNew";
 
 export default function LocationPage() {
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleGoogleMaps = () => {
     window.open("https://www.google.com/maps/place/Pusat+Oleh+-+Oleh+Lezat/@-7.493333399999999,110.2225967,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a8f381c35967b:0x7e71ec5b29884cdf!8m2!3d-7.493333399999999!4d110.2225967!16s%2Fg%2F11c1q8qy8y", "_blank");
@@ -16,8 +18,8 @@ export default function LocationPage() {
       <Header 
         cartItemCount={0} 
         onCartClick={() => {}}
-        searchQuery=""
-        onSearchChange={() => {}}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
       />
       
       <main className="flex-1 flex flex-col">
