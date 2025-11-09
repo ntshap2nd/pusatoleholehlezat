@@ -172,7 +172,7 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
     name: "SUS COKLAT SARIKAYA",
     basePrice: 70500,
     image: susCoklatSarikaya,
-    description: "Sus coklat dengan isian sarikaya yang manis dan lembut",
+    description: "Sus coklat yang manis dan lembut",
     category: "Snack Kiloan",
     weightOptions: [
       { weight: 0.25, price: 17625, label: "1/4 kg" },
@@ -367,7 +367,7 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
     name: "SUS MELATI",
     basePrice: 98000,
     image: susMelati,
-    description: "Sus melati dengan aroma melati yang harum dan rasa yang manis",
+    description: "Sus Melati dengan rasa yang manis",
     category: "Snack Kiloan",
     weightOptions: [
       { weight: 0.25, price: 24500, label: "1/4 kg" },
