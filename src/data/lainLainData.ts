@@ -18,18 +18,18 @@ export const lainLainProducts: LainLainProduct[] = [
     name: "TAS BELANJA MEDIUM",
     price: 10000,
     image: tasBelanjaMedium,
-    description: "Tas belanja ramah lingkungan ukuran medium - Ukuran 30x15x40cm (volume besar)",
+    description: "Tas belanja ramah lingkungan ukuran medium - Ukuran 30x40x15cm (velcro)",
     category: "Lain-lain",
-    weight: "Ukuran 30x15x40cm"
+    weight: "Ukuran 30x40x15cm"
   },
   {
     id: 7002,
     name: "TAS BELANJA LARGE",
     price: 30000,
     image: tasBelanjaNLarge,
-    description: "Tas belanja ramah lingkungan ukuran large - Ukuran 40x25x10cm (volume sangat besar)",
+    description: "Tas belanja ramah lingkungan ukuran large - Ukuran 40x40x25cm (volume sangat besar)",
     category: "Lain-lain",
-    weight: "Ukuran 40x25x10cm"
+    weight: "Ukuran 40x40x25cm"
   }
 ];
 
