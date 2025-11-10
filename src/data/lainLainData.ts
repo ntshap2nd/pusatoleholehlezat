@@ -27,7 +27,7 @@ export const lainLainProducts: LainLainProduct[] = [
     name: "TAS BELANJA LARGE",
     price: 30000,
     image: tasBelanjaNLarge,
-    description: "Tas belanja ramah lingkungan ukuran large - Ukuran 40x40x25cm (volume sangat besar)",
+    description: "Tas belanja ramah lingkungan ukuran large - Ukuran 40x40x25cm (resleting)",
     category: "Lain-lain",
     weight: "Ukuran 40x40x25cm"
   }
