@@ -62,7 +62,7 @@ const handleCheckout = (cartItems: CartItem[], totalPrice: number, toast: ToastF
   message += ` *Total Pembayaran: ${formattedPrice}* Mohon konfirmasi pesanan saya. Terima kasih!`;
   
   // Force use phone number format for both mobile and desktop
-  const whatsappNumber = "6285867989333"; // Admin's WhatsApp number
+  const whatsappNumber = "6285122614122"; // Admin's WhatsApp number
 
   try {
     // Show loading toast
