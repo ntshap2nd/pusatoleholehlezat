@@ -442,7 +442,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3042,
     name: "TENGIRI BULAT",
-    price: 27000,
+    price: 27500,
     image: tengiriBulat,
     description: "Keripik tengiri bulat dengan rasa ikan tengiri yang gurih",
     category: "Keripik",
@@ -451,7 +451,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3043,
     name: "TENGIRI PENCENG",
-    price: 27000,
+    price: 27500,
     image: tengiriPenceng,
     description: "Keripik tengiri penceng dengan bentuk miring yang unik",
     category: "Keripik",
