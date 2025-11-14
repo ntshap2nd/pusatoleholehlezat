@@ -339,14 +339,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1023,
     name: "EMPING KLETUK ASIN",
-    basePrice: 107000,
+    basePrice: 98000,
     image: empingKletuk,
     description: "Emping kletuk asin dengan rasa gurih yang khas",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 26750, label: "1/4 kg" },
-      { weight: 0.5, price: 53500, label: "1/2 kg" },
-      { weight: 1, price: 107000, label: "1 kg" }
+      { weight: 0.25, price: 24500, label: "1/4 kg" },
+      { weight: 0.5, price: 49000, label: "1/2 kg" },
+      { weight: 1, price: 98000, label: "1 kg" }
     ]
   },
   {

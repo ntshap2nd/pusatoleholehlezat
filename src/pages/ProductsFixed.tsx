@@ -242,7 +242,7 @@ const products: Product[] = [
   {
     id: 14,
     name: "BOLU KUWUK",
-    price: 28000,
+    price: 29000,
     image: boluKuwuk,
     description: "Bolu kuwuk tradisional dengan tekstur lembut dan rasa yang khas",
     category: "Kue Kering",
@@ -251,7 +251,7 @@ const products: Product[] = [
   {
     id: 15,
     name: "BOLU KUWUK AREN",
-    price: 29000,
+    price: 30000,
     image: boluKuwukAren,
     description: "Bolu kuwuk aren dengan gula aren asli yang memberikan rasa manis alami",
     category: "Kue Kering",
