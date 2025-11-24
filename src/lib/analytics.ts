@@ -56,7 +56,7 @@ export const isGALoaded = (): boolean => {
 export const trackPageView = (url: string, title?: string) => {
   if (!isGALoaded()) return;
 
-  window.gtag!('config', 'G-XXXXXXXXXX', {
+  window.gtag!('config', 'G-LG80GBQEFP', {
     page_path: url,
     page_title: title || document.title,
     page_location: window.location.href
