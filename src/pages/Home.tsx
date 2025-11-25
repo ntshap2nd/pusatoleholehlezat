@@ -20,6 +20,8 @@ import { kacangProducts } from "@/data/kacangData";
 import { palmaProducts } from "@/data/palmaData";
 import { palmaCurahProducts } from "@/data/palmaCurahData";
 import { lainLainProducts } from "@/data/lainLainData";
+import { SEO } from "@/components/SEO";
+import { SEO_CONFIG } from "@/lib/seo-config";
 
 // Kue Kering imports
 import susCoklat from "@/assets/image/KUE KERING/1_SUS COKLAT.jpg";
@@ -1035,10 +1037,10 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
     if (selectedCategory === "Snack Kiloan") {
       return [];
     }
-    
+
     // Start with category filtering
     let products: Product[] = [];
-    
+
     if (selectedCategory === "Semua") {
       // For "Semua" category, use the cached random products (if no search)
       if (!searchQuery.trim()) {
@@ -1048,7 +1050,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
         products = allProducts;
       }
     } else if (selectedCategory === "Bakpia dan Kue Basah") {
-      products = allProducts.filter(product => 
+      products = allProducts.filter(product =>
         product.category === "Bakpia & Kue Basah" || product.category === "Kue Basah"
       );
     } else if (selectedCategory === "Minuman") {
@@ -1056,7 +1058,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
     } else {
       products = allProducts.filter(product => product.category === selectedCategory);
     }
-    
+
     // Apply search filter if there's a search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1066,7 +1068,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
         product.category.toLowerCase().includes(query)
       );
     }
-    
+
     return products;
   })();
 
@@ -1075,7 +1077,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
     let products = selectedCategory === "Semua" || selectedCategory === "Snack Kiloan"
       ? snackKiloanProducts
       : [];
-    
+
     // Apply search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1084,12 +1086,12 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
         (product.description && product.description.toLowerCase().includes(query))
       );
     }
-    
+
     // For "Semua" category, only show 2 random snack kiloan products if no search
     if (selectedCategory === "Semua" && !searchQuery.trim()) {
       return products.sort(() => 0.5 - Math.random()).slice(0, 2);
     }
-    
+
     return products;
   })();
 
@@ -1098,7 +1100,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
     let products = selectedCategory === "Semua" || selectedCategory === "PALMA CURAH"
       ? palmaCurahProducts
       : [];
-    
+
     // Apply search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1107,12 +1109,12 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
         (product.description && product.description.toLowerCase().includes(query))
       );
     }
-    
+
     // For "Semua" category, only show 2 random PALMA CURAH products if no search
     if (selectedCategory === "Semua" && !searchQuery.trim()) {
       return products.sort(() => 0.5 - Math.random()).slice(0, 2);
     }
-    
+
     return products;
   })();
 
@@ -1144,7 +1146,7 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
 
     // Use parent's onAddToCart to add the converted cart item
     onAddToCart(cartItem as Product, cartItem.quantity);
-    
+
     toast({
       title: "✅ Produk ditambahkan!",
       description: `${cartItem.name} berhasil ditambahkan ke keranjang`,
@@ -1192,434 +1194,431 @@ const HomePage = ({ cartItems, onAddToCart, onRemoveFromCart, onUpdateQuantity, 
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header 
-        cartItemCount={getTotalItemsInCart()} 
-        onCartClick={() => setIsCartOpen(true)}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
+    <>
+      <SEO
+        title={SEO_CONFIG.pages.home.title}
+        description={SEO_CONFIG.pages.home.description}
+        keywords={[...SEO_CONFIG.pages.home.keywords]}
+        canonical={SEO_CONFIG.pages.home.canonical}
       />
-      
-      <main>
-        {/* Banner Slider Section */}
-        <BannerSlider />
-        
-        {/* Belanja Online Section - Exactly like mockup */}
-        <section id="product-catalog" className="bg-red-600 py-6 sm:py-8">
-          <div className="container mx-auto px-4">
-            {/* Section Header */}
-            <div className="text-center mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
-                Belanja Online di pusatoleholehlezat
+      <div className="min-h-screen bg-background">
+        <Header
+          cartItemCount={getTotalItemsInCart()}
+          onCartClick={() => setIsCartOpen(true)}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+        />
+
+        <main>
+          {/* Banner Slider Section */}
+          <BannerSlider />
+
+          {/* Belanja Online Section - Exactly like mockup */}
+          <section id="product-catalog" className="bg-red-600 py-6 sm:py-8">
+            <div className="container mx-auto px-4">
+              {/* Section Header */}
+              <div className="text-center mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
+                  Belanja Online di pusatoleholehlezat
+                </h2>
+              </div>
+
+              {/* Category Filter Buttons - White buttons exactly like mockup */}
+              <div className="relative">
+                {/* Gradient fade indicators */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-red-600 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-red-600 to-transparent z-10 pointer-events-none"></div>
+
+                <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-4 mb-4 sm:mb-6 px-1">
+                  <button
+                    onClick={() => handleCategoryClick('Semua')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Semua'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Semua' && <Check className="w-4 h-4" />}
+                    Semua
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Kue Kering')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Kue Kering'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Kue Kering' && <Check className="w-4 h-4" />}
+                    Kue Kering
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Keripik')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Keripik'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Keripik' && <Check className="w-4 h-4" />}
+                    Keripik
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Permen & Manisan')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Permen & Manisan'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Permen & Manisan' && <Check className="w-4 h-4" />}
+                    Permen & Manisan
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Bakpia dan Kue Basah')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Bakpia dan Kue Basah'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Bakpia dan Kue Basah' && <Check className="w-4 h-4" />}
+                    Bakpia dan Kue Basah
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Kacang-kacangan')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Kacang-kacangan'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Kacang-kacangan' && <Check className="w-4 h-4" />}
+                    Kacang-kacangan
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('PALMA')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'PALMA'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'PALMA' && <Check className="w-4 h-4" />}
+                    PALMA
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('PALMA CURAH')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'PALMA CURAH'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'PALMA CURAH' && <Check className="w-4 h-4" />}
+                    PALMA CURAH
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Snack Kiloan')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Snack Kiloan'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Snack Kiloan' && <Check className="w-4 h-4" />}
+                    Snack Kiloan
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Minuman')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Minuman'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Minuman' && <Check className="w-4 h-4" />}
+                    Minuman
+                  </button>
+                  <button
+                    onClick={() => handleCategoryClick('Lain-lain')}
+                    className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${selectedCategory === 'Lain-lain'
+                      ? 'bg-orange-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                  >
+                    {selectedCategory === 'Lain-lain' && <Check className="w-4 h-4" />}
+                    Lain-lain
+                  </button>
+                </div>
+              </div>
+
+              {/* Empty State - No Results Found */}
+              {filteredProducts.length === 0 && filteredSnackKiloan.length === 0 && filteredPalmaCurah.length === 0 && !isLoading && (
+                <div className="text-center py-12 px-4">
+                  <div className="max-w-md mx-auto">
+                    <div className="text-6xl mb-4">🔍</div>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {searchQuery ? 'Produk Tidak Ditemukan' : 'Belum Ada Produk'}
+                    </h3>
+                    <p className="text-white/80 mb-6">
+                      {searchQuery
+                        ? `Tidak ada produk yang cocok dengan "${searchQuery}"`
+                        : 'Belum ada produk di kategori ini'
+                      }
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      {searchQuery && (
+                        <button
+                          onClick={() => setSearchQuery("")}
+                          className="px-6 py-3 bg-white text-red-600 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                        >
+                          Reset Pencarian
+                        </button>
+                      )}
+                      <button
+                        onClick={() => {
+                          setSelectedCategory('Semua');
+                          setSearchQuery("");
+                        }}
+                        className="px-6 py-3 bg-orange-600 text-white rounded-full font-bold hover:bg-orange-700 transition-colors"
+                      >
+                        Lihat Semua Produk
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Loading Skeleton */}
+              {isLoading && (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
+                  {[...Array(8)].map((_, index) => (
+                    <div key={index} className="animate-pulse">
+                      <div className="bg-amber-700/50 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600/50">
+                        {/* Image Skeleton */}
+                        <div className="aspect-square bg-amber-600/30 rounded-md sm:rounded-lg mb-2"></div>
+                        {/* Title Skeleton */}
+                        <div className="h-4 bg-amber-600/30 rounded mb-2"></div>
+                        <div className="h-4 bg-amber-600/30 rounded w-3/4 mb-2"></div>
+                        {/* Price Skeleton */}
+                        <div className="h-5 bg-amber-600/30 rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Products Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
+              {(filteredProducts.length > 0 || filteredSnackKiloan.length > 0 || filteredPalmaCurah.length > 0) && !isLoading && (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
+                  {/* Regular Products - Only show if there are products */}
+                  {filteredProducts.map((product) => (
+                    <div key={product.id} className="group">
+                      <div className="bg-amber-700 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600 relative">
+                        {/* Product Image */}
+                        <div
+                          className="aspect-square bg-amber-600 rounded-md sm:rounded-lg mb-2 overflow-hidden relative cursor-pointer"
+                          onClick={() => handleProductClick(product)}
+                        >
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+
+                          {/* Eye Icon Overlay */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          </div>
+
+                          {/* Weight Badge - Top Left */}
+                          {product.weight && (
+                            <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-white bg-opacity-90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded text-xs font-bold text-gray-800 shadow-md">
+                              {product.weight}
+                            </div>
+                          )}
+
+                          {/* Add Button with Quantity Control */}
+                          <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2">
+                            {(() => {
+                              const cartItem = cartItems.find(item => item.id === product.id);
+                              const currentQuantity = cartItem ? cartItem.quantity : 0;
+
+                              if (currentQuantity === 0) {
+                                return (
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      console.log('Home: Add button clicked - should not refresh');
+                                      handleAddToCart(product, 1);
+                                      return false;
+                                    }}
+                                    className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-gray-100 text-red-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-150"
+                                  >
+                                    <Plus className="h-3 w-3 sm:h-4 sm:w-4 font-bold" />
+                                  </button>
+                                );
+                              } else {
+                                return (
+                                  <div className="bg-white rounded-full shadow-lg flex items-center justify-center">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        console.log('Home: Minus button clicked');
+                                        handleAddToCart(product, -1);
+                                        return false;
+                                      }}
+                                      className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-l-full flex items-center justify-center transition-colors"
+                                    >
+                                      <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
+                                    </button>
+                                    <span className="px-1 sm:px-2 text-xs sm:text-sm font-bold text-red-600 min-w-[16px] sm:min-w-[20px] text-center">
+                                      {currentQuantity}
+                                    </span>
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        console.log('Home: Plus button clicked');
+                                        handleAddToCart(product, 1);
+                                        return false;
+                                      }}
+                                      className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-r-full flex items-center justify-center transition-colors"
+                                    >
+                                      <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
+                                    </button>
+                                  </div>
+                                );
+                              }
+                            })()}
+                          </div>
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="space-y-1">
+                          <h3 className="font-bold text-white text-xs sm:text-sm leading-tight line-clamp-2">
+                            {product.name}
+                          </h3>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs sm:text-sm font-bold text-white">
+                              Rp {product.price.toLocaleString('id-ID')}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Snack Kiloan Products */}
+                  {filteredSnackKiloan.map((product) => (
+                    <SnackKiloanCard
+                      key={product.id}
+                      product={product}
+                      onAddToCart={handleSnackKiloanAddToCart}
+                      onViewDetail={handleSnackKiloanClick}
+                    />
+                  ))}
+
+                  {/* PALMA CURAH Products - using same card as Snack Kiloan */}
+                  {filteredPalmaCurah.map((product) => (
+                    <SnackKiloanCard
+                      key={product.id}
+                      product={product}
+                      onAddToCart={handleSnackKiloanAddToCart}
+                      onViewDetail={handleSnackKiloanClick}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Scroll to Top Button - Floating */}
+              {showScrollTop && (
+                <div className="fixed bottom-24 right-6 z-50">
+                  <button
+                    onClick={scrollToTop}
+                    className="w-12 h-12 bg-orange-600 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-orange-700 hover:shadow-2xl transition-all duration-200 transform hover:scale-110 animate-fade-in"
+                    aria-label="Scroll to top"
+                  >
+                    <ArrowUp className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* Review Pembeli Section */}
+          <GoogleReviews />
+
+          {/* Toko Kami Section - Separate heading and full-width map */}
+          <section className="bg-white py-4">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-2xl font-black text-gray-900 mb-2">
+                Toko Kami
               </h2>
             </div>
+          </section>
 
-            {/* Category Filter Buttons - White buttons exactly like mockup */}
-            <div className="relative">
-              {/* Gradient fade indicators */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-red-600 to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-red-600 to-transparent z-10 pointer-events-none"></div>
-              
-              <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-4 mb-4 sm:mb-6 px-1">
-              <button 
-                onClick={() => handleCategoryClick('Semua')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Semua' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Semua' && <Check className="w-4 h-4" />}
-                Semua
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Kue Kering')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Kue Kering' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Kue Kering' && <Check className="w-4 h-4" />}
-                Kue Kering
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Keripik')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Keripik' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Keripik' && <Check className="w-4 h-4" />}
-                Keripik
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Permen & Manisan')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Permen & Manisan' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Permen & Manisan' && <Check className="w-4 h-4" />}
-                Permen & Manisan
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Bakpia dan Kue Basah')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Bakpia dan Kue Basah' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Bakpia dan Kue Basah' && <Check className="w-4 h-4" />}
-                Bakpia dan Kue Basah
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Kacang-kacangan')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Kacang-kacangan' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Kacang-kacangan' && <Check className="w-4 h-4" />}
-                Kacang-kacangan
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('PALMA')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'PALMA' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'PALMA' && <Check className="w-4 h-4" />}
-                PALMA
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('PALMA CURAH')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'PALMA CURAH' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'PALMA CURAH' && <Check className="w-4 h-4" />}
-                PALMA CURAH
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Snack Kiloan')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Snack Kiloan' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Snack Kiloan' && <Check className="w-4 h-4" />}
-                Snack Kiloan
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Minuman')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Minuman' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Minuman' && <Check className="w-4 h-4" />}
-                Minuman
-              </button>
-              <button 
-                onClick={() => handleCategoryClick('Lain-lain')}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === 'Lain-lain' 
-                    ? 'bg-orange-600 text-white shadow-lg scale-105' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {selectedCategory === 'Lain-lain' && <Check className="w-4 h-4" />}
-                Lain-lain
-              </button>
-              </div>
+          <div className="w-full">
+            <div className="relative w-full h-[360px] sm:h-[500px] lg:h-[600px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1757642898313!6m8!1m7!1sQj1PS1mDWxDfPXXpqYB5AQ!2m2!1d-7.493334006981341!2d110.222667005607!3f277.7709!4f0!5f0.7820865974627469"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps Street View - Toko Lezat"
+                className="absolute inset-0 h-full w-full"
+              ></iframe>
             </div>
-
-            {/* Empty State - No Results Found */}
-            {filteredProducts.length === 0 && filteredSnackKiloan.length === 0 && filteredPalmaCurah.length === 0 && !isLoading && (
-              <div className="text-center py-12 px-4">
-                <div className="max-w-md mx-auto">
-                  <div className="text-6xl mb-4">🔍</div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {searchQuery ? 'Produk Tidak Ditemukan' : 'Belum Ada Produk'}
-                  </h3>
-                  <p className="text-white/80 mb-6">
-                    {searchQuery 
-                      ? `Tidak ada produk yang cocok dengan "${searchQuery}"`
-                      : 'Belum ada produk di kategori ini'
-                    }
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    {searchQuery && (
-                      <button
-                        onClick={() => setSearchQuery("")}
-                        className="px-6 py-3 bg-white text-red-600 rounded-full font-bold hover:bg-gray-100 transition-colors"
-                      >
-                        Reset Pencarian
-                      </button>
-                    )}
-                    <button
-                      onClick={() => {
-                        setSelectedCategory('Semua');
-                        setSearchQuery("");
-                      }}
-                      className="px-6 py-3 bg-orange-600 text-white rounded-full font-bold hover:bg-orange-700 transition-colors"
-                    >
-                      Lihat Semua Produk
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Loading Skeleton */}
-            {isLoading && (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
-                {[...Array(8)].map((_, index) => (
-                  <div key={index} className="animate-pulse">
-                    <div className="bg-amber-700/50 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600/50">
-                      {/* Image Skeleton */}
-                      <div className="aspect-square bg-amber-600/30 rounded-md sm:rounded-lg mb-2"></div>
-                      {/* Title Skeleton */}
-                      <div className="h-4 bg-amber-600/30 rounded mb-2"></div>
-                      <div className="h-4 bg-amber-600/30 rounded w-3/4 mb-2"></div>
-                      {/* Price Skeleton */}
-                      <div className="h-5 bg-amber-600/30 rounded w-1/2"></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Products Grid - Responsive: 2 cols mobile, 3 cols tablet, 4 cols desktop */}
-            {(filteredProducts.length > 0 || filteredSnackKiloan.length > 0 || filteredPalmaCurah.length > 0) && !isLoading && (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
-                {/* Regular Products - Only show if there are products */}
-                {filteredProducts.map((product) => (
-                <div key={product.id} className="group">
-                  <div className="bg-amber-700 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600 relative">
-                    {/* Product Image */}
-                    <div 
-                      className="aspect-square bg-amber-600 rounded-md sm:rounded-lg mb-2 overflow-hidden relative cursor-pointer"
-                      onClick={() => handleProductClick(product)}
-                    >
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      
-                      {/* Eye Icon Overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                        <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      
-                      {/* Weight Badge - Top Left */}
-                      {product.weight && (
-                        <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-white bg-opacity-90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded text-xs font-bold text-gray-800 shadow-md">
-                          {product.weight}
-                        </div>
-                      )}
-                      
-                      {/* Add Button with Quantity Control */}
-                      <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2">
-                        {(() => {
-                          const cartItem = cartItems.find(item => item.id === product.id);
-                          const currentQuantity = cartItem ? cartItem.quantity : 0;
-                          
-                          if (currentQuantity === 0) {
-                            return (
-                              <button 
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  console.log('Home: Add button clicked - should not refresh');
-                                  handleAddToCart(product, 1);
-                                  return false;
-                                }}
-                                className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-gray-100 text-red-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-150"
-                              >
-                                <Plus className="h-3 w-3 sm:h-4 sm:w-4 font-bold" />
-                              </button>
-                            );
-                          } else {
-                            return (
-                              <div className="bg-white rounded-full shadow-lg flex items-center justify-center">
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    console.log('Home: Minus button clicked');
-                                    handleAddToCart(product, -1);
-                                    return false;
-                                  }}
-                                  className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-l-full flex items-center justify-center transition-colors"
-                                >
-                                  <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
-                                </button>
-                                <span className="px-1 sm:px-2 text-xs sm:text-sm font-bold text-red-600 min-w-[16px] sm:min-w-[20px] text-center">
-                                  {currentQuantity}
-                                </span>
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    console.log('Home: Plus button clicked');
-                                    handleAddToCart(product, 1);
-                                    return false;
-                                  }}
-                                  className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-r-full flex items-center justify-center transition-colors"
-                                >
-                                  <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
-                                </button>
-                              </div>
-                            );
-                          }
-                        })()}
-                      </div>
-                    </div>
-
-                    {/* Product Info */}
-                    <div className="space-y-1">
-                      <h3 className="font-bold text-white text-xs sm:text-sm leading-tight line-clamp-2">
-                        {product.name}
-                      </h3>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs sm:text-sm font-bold text-white">
-                          Rp {product.price.toLocaleString('id-ID')}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              
-              {/* Snack Kiloan Products */}
-              {filteredSnackKiloan.map((product) => (
-                <SnackKiloanCard 
-                  key={product.id} 
-                  product={product} 
-                  onAddToCart={handleSnackKiloanAddToCart}
-                  onViewDetail={handleSnackKiloanClick}
-                />
-              ))}
-
-              {/* PALMA CURAH Products - using same card as Snack Kiloan */}
-              {filteredPalmaCurah.map((product) => (
-                <SnackKiloanCard 
-                  key={product.id} 
-                  product={product} 
-                  onAddToCart={handleSnackKiloanAddToCart}
-                  onViewDetail={handleSnackKiloanClick}
-                />
-              ))}
-              </div>
-            )}
-
-            {/* Scroll to Top Button - Floating */}
-            {showScrollTop && (
-              <div className="fixed bottom-24 right-6 z-50">
-                <button
-                  onClick={scrollToTop}
-                  className="w-12 h-12 bg-orange-600 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-orange-700 hover:shadow-2xl transition-all duration-200 transform hover:scale-110 animate-fade-in"
-                  aria-label="Scroll to top"
-                >
-                  <ArrowUp className="w-5 h-5" />
-                </button>
-              </div>
-            )}
           </div>
-        </section>
+        </main>
 
-        {/* Review Pembeli Section */}
-        <GoogleReviews />
+        <FooterNew />
 
-        {/* Toko Kami Section - Separate heading and full-width map */}
-        <section className="bg-white py-4">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-black text-gray-900 mb-2">
-              Toko Kami
-            </h2>
-          </div>
-        </section>
+        {/* Floating Checkout Button - Hide when modals are open */}
+        {getTotalItemsInCart() > 0 && !isUserDataModalOpen && !isCartOpen && (
+          <FloatingCheckoutButton
+            cartItems={cartItems}
+            onCheckoutClick={handleCheckout}
+            onCartClick={handleCheckout}
+          />
+        )}
 
-        <div className="w-full">
-          <div className="relative w-full h-[360px] sm:h-[500px] lg:h-[600px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!4v1757642898313!6m8!1m7!1sQj1PS1mDWxDfPXXpqYB5AQ!2m2!1d-7.493334006981341!2d110.222667005607!3f277.7709!4f0!5f0.7820865974627469"
-              width="100%"
-              height="100%"
-              style={{ border: 0, display: 'block' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Maps Street View - Toko Lezat"
-              className="absolute inset-0 h-full w-full"
-            ></iframe>
-          </div>
-        </div>
-      </main>
-      
-      <FooterNew />
-
-      {/* Floating Checkout Button - Hide when modals are open */}
-      {getTotalItemsInCart() > 0 && !isUserDataModalOpen && !isCartOpen && (
-        <FloatingCheckoutButton 
+        {/* Cart Modal */}
+        <CartModal
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
           cartItems={cartItems}
-          onCheckoutClick={handleCheckout}
-          onCartClick={handleCheckout}
+          onRemoveItem={handleRemoveFromCart}
+          onUpdateQuantity={handleUpdateQuantity}
         />
-      )}
-      
-      {/* Cart Modal */}
-      <CartModal
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
-        onRemoveItem={handleRemoveFromCart}
-        onUpdateQuantity={handleUpdateQuantity}
-      />
 
-      {/* User Data Modal */}
-      <UserDataModal
-        isOpen={isUserDataModalOpen}
-        onClose={() => setIsUserDataModalOpen(false)}
-        cartItems={cartItems}
-        onCheckoutComplete={handleCheckoutComplete}
-        onUpdateQuantity={onUpdateQuantity}
-        onRemoveItem={onRemoveFromCart}
-      />
+        {/* User Data Modal */}
+        <UserDataModal
+          isOpen={isUserDataModalOpen}
+          onClose={() => setIsUserDataModalOpen(false)}
+          cartItems={cartItems}
+          onCheckoutComplete={handleCheckoutComplete}
+          onUpdateQuantity={onUpdateQuantity}
+          onRemoveItem={onRemoveFromCart}
+        />
 
-      {/* Product Detail Modal */}
-      <ProductDetailModal
-        product={selectedProduct}
-        isOpen={isDetailModalOpen}
-        onClose={() => setIsDetailModalOpen(false)}
-        onAddToCart={handleDetailModalAddToCart}
-        currentQuantity={selectedProduct ? (cartItems.find(item => item.id === selectedProduct.id)?.quantity || 0) : 0}
-      />
+        {/* Product Detail Modal */}
+        <ProductDetailModal
+          product={selectedProduct}
+          isOpen={isDetailModalOpen}
+          onClose={() => setIsDetailModalOpen(false)}
+          onAddToCart={handleDetailModalAddToCart}
+          currentQuantity={selectedProduct ? (cartItems.find(item => item.id === selectedProduct.id)?.quantity || 0) : 0}
+        />
 
-      {/* Snack Kiloan Detail Modal */}
-      <SnackKiloanDetailModal
-        product={selectedSnackKiloan}
-        isOpen={isSnackKiloanDetailOpen}
-        onClose={() => setIsSnackKiloanDetailOpen(false)}
-        onAddToCart={handleSnackKiloanAddToCart}
-      />
-    </div>
+        {/* Snack Kiloan Detail Modal */}
+        <SnackKiloanDetailModal
+          product={selectedSnackKiloan}
+          isOpen={isSnackKiloanDetailOpen}
+          onClose={() => setIsSnackKiloanDetailOpen(false)}
+          onAddToCart={handleSnackKiloanAddToCart}
+        />
+      </div>
+    </>
   );
 };
 

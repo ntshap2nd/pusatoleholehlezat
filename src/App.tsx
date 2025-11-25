@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./pages/Home";
 import Products from "./pages/Products";
 import LocationPage from "./pages/Location";
@@ -58,7 +59,7 @@ const App = () => {
   // Cart handler functions
   const handleAddToCart = (product: Product, quantityChange: number = 1) => {
     const existingItem = cartItems.find(item => item.id === product.id);
-    
+
     if (existingItem) {
       const newQuantity = existingItem.quantity + quantityChange;
       if (newQuantity <= 0) {
@@ -106,45 +107,47 @@ const App = () => {
   };
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AnalyticsWrapper>
-            <Routes>
-              <Route 
-                path="/" 
-                element={
-                  <HomePage 
-                    cartItems={cartItems}
-                    onAddToCart={handleAddToCart}
-                    onRemoveFromCart={handleRemoveFromCart}
-                    onUpdateQuantity={handleUpdateQuantity}
-                    onClearCart={handleClearCart}
-                  />
-                } 
-              />
-              <Route 
-                path="/products" 
-                element={
-                  <Products 
-                    cartItems={cartItems}
-                  onAddToCart={handleAddToCart}
-                  onRemoveFromCart={handleRemoveFromCart}
-                  onUpdateQuantity={handleUpdateQuantity}
-                  onClearCart={handleClearCart}
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <AnalyticsWrapper>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <HomePage
+                      cartItems={cartItems}
+                      onAddToCart={handleAddToCart}
+                      onRemoveFromCart={handleRemoveFromCart}
+                      onUpdateQuantity={handleUpdateQuantity}
+                      onClearCart={handleClearCart}
+                    />
+                  }
                 />
-              } 
-            />
-            <Route path="/location" element={<LocationPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          </AnalyticsWrapper>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+                <Route
+                  path="/products"
+                  element={
+                    <Products
+                      cartItems={cartItems}
+                      onAddToCart={handleAddToCart}
+                      onRemoveFromCart={handleRemoveFromCart}
+                      onUpdateQuantity={handleUpdateQuantity}
+                      onClearCart={handleClearCart}
+                    />
+                  }
+                />
+                <Route path="/location" element={<LocationPage />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </AnalyticsWrapper>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 
