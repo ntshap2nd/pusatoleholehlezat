@@ -70,6 +70,8 @@ import wingkoBabat35Kecil from "@/assets/image/BAKPIA & KUE BASAH/30_WINGKO BABA
 import yangkoKembar from "@/assets/image/BAKPIA & KUE BASAH/31_ YANGKO KEMBAR.jpg";
 import yangkoGiant from "@/assets/image/BAKPIA & KUE BASAH/32_YANGKO GIANT.jpg";
 import yangkoAnekaRasaGose from "@/assets/image/BAKPIA & KUE BASAH/33_YANGKO ANEKA RASA GOSE (SGT).jpg";
+import cenglongPiaNikiEchoPanjang from "@/assets/image/BAKPIA & KUE BASAH/new/CENGLONG PIA NIKI ECHO PANJANG.jpg";
+import kuePiaSariMurni from "@/assets/image/BAKPIA & KUE BASAH/new/KUE PIA SARI MURNI.jpg";
 
 // Minuman Instan imports
 import etawavitOriginal from "@/assets/image/Minuman Instan/1_ETAWAVIT ORIGINAL.jpg";
@@ -563,6 +565,24 @@ const products: Product[] = [
     category: "Bakpia & Kue Basah",
     weight: "25 g"
   },
+  {
+    id: 234,
+    name: "CENGLONG PIA NIKI ECHO PANJANG",
+    price: 19000,
+    image: cenglongPiaNikiEchoPanjang,
+    description: "Cenglong pia Niki Echo dengan bentuk panjang dan rasa yang khas",
+    category: "Bakpia & Kue Basah",
+    weight: "20 g"
+  },
+  {
+    id: 235,
+    name: "KUE PIA SARI MURNI",
+    price: 30000,
+    image: kuePiaSariMurni,
+    description: "Kue pia Sari Murni dengan resep tradisional dan cita rasa yang lezat",
+    category: "Bakpia & Kue Basah",
+    weight: "20 g"
+  },
   // Minuman Instan Products
   {
     id: 50,
@@ -1033,14 +1053,14 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       console.log('🔍 Snack Kiloan selected - hiding regular products');
       return [];
     }
-    
+
     // Start with category filtering
     let productList: Product[] = [];
-    
+
     if (selectedCategory === "Semua") {
       productList = products; // Show all products
     } else if (selectedCategory === "Bakpia dan Kue Basah") {
-      productList = products.filter(product => 
+      productList = products.filter(product =>
         product.category === "Bakpia & Kue Basah" || product.category === "Kue Basah"
       );
     } else if (selectedCategory === "Minuman") {
@@ -1048,7 +1068,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
     } else {
       productList = products.filter(product => product.category === selectedCategory);
     }
-    
+
     // Apply search filter if there's a search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1058,7 +1078,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         product.category.toLowerCase().includes(query)
       );
     }
-    
+
     return productList;
   })();
 
@@ -1067,7 +1087,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
     let products = selectedCategory === "Semua" || selectedCategory === "Snack Kiloan"
       ? snackKiloanProducts
       : [];
-    
+
     // Apply search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1076,7 +1096,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         (product.description && product.description.toLowerCase().includes(query))
       );
     }
-    
+
     console.log('🔍 Filtered Snack Kiloan:', products.length);
     return products;
   })();
@@ -1086,7 +1106,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
     let products = selectedCategory === "Semua" || selectedCategory === "PALMA CURAH"
       ? palmaCurahProducts
       : [];
-    
+
     // Apply search filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -1095,17 +1115,17 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         (product.description && product.description.toLowerCase().includes(query))
       );
     }
-    
+
     console.log('🔍 Filtered PALMA CURAH:', products.length);
     return products;
   })();
 
   const addToCart = (product: Product, quantityChange: number = 1) => {
     console.log('addToCart called:', product.name, quantityChange);
-    
+
     // Use parent's onAddToCart handler
     onAddToCart(product, quantityChange);
-    
+
     // Show toast for positive quantity changes
     if (quantityChange > 0) {
       toast({
@@ -1126,7 +1146,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       weight: `${item.weightKg}kg`,
       id: typeof item.id === 'string' ? parseInt((item.id as string).replace('sk', '')) + 1000 : item.id as number
     };
-    
+
     // Use parent's onAddToCart handler
     onAddToCart(cartItem as Product, cartItem.quantity);
 
@@ -1183,8 +1203,8 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
 
   return (
     <div className="min-h-screen bg-background">
-      <Header 
-        cartItemCount={totalItems} 
+      <Header
+        cartItemCount={totalItems}
         onCartClick={openCart}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -1202,22 +1222,21 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
           {/* Gradient fade indicators */}
           <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-          
+
           <div className="flex overflow-x-auto gap-2 mb-6 pb-2 px-1">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 whitespace-nowrap flex items-center gap-2 ${
-                selectedCategory === category 
-                  ? 'bg-orange-600 text-white shadow-lg scale-105' 
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 whitespace-nowrap flex items-center gap-2 ${selectedCategory === category
+                  ? 'bg-orange-600 text-white shadow-lg scale-105'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {selectedCategory === category && <Check className="w-4 h-4" />}
-              {category}
-            </button>
-          ))}
+                  }`}
+              >
+                {selectedCategory === category && <Check className="w-4 h-4" />}
+                {category}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -1230,7 +1249,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
                 {searchQuery ? 'Produk Tidak Ditemukan' : 'Belum Ada Produk'}
               </h3>
               <p className="text-gray-600 mb-6">
-                {searchQuery 
+                {searchQuery
                   ? `Tidak ada produk yang cocok dengan "${searchQuery}"`
                   : 'Belum ada produk di kategori ini'
                 }
@@ -1281,106 +1300,106 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
         {filteredProducts.length > 0 && !isLoading && (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6">
             {filteredProducts.map((product) => (
-            <div key={product.id} className="group">
-              <div className="bg-amber-700 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600 relative">
-                {/* Product Image */}
-                <div 
-                  className="aspect-square bg-amber-600 rounded-md sm:rounded-lg mb-2 overflow-hidden relative cursor-pointer"
-                  onClick={() => handleProductClick(product)}
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  
-                  {/* Eye Icon Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                    <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  
-                  {/* Weight Badge - Top Left */}
-                  {product.weight && (
-                    <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-white bg-opacity-90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded text-xs font-bold text-gray-800 shadow-md">
-                      {product.weight}
+              <div key={product.id} className="group">
+                <div className="bg-amber-700 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-lg border border-amber-600 relative">
+                  {/* Product Image */}
+                  <div
+                    className="aspect-square bg-amber-600 rounded-md sm:rounded-lg mb-2 overflow-hidden relative cursor-pointer"
+                    onClick={() => handleProductClick(product)}
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+
+                    {/* Eye Icon Overlay */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                      <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                  )}
-                  
-                  {/* Add Button with Quantity Control */}
-                  <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2">
-                    {(() => {
-                      const cartItem = cartItems.find(item => item.id === product.id);
-                      const currentQuantity = cartItem ? cartItem.quantity : 0;
-                      
-                      if (currentQuantity === 0) {
-                        return (
-                          <button 
-                            type="button"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              console.log('Products: Add button clicked - should not refresh');
-                              addToCart(product, 1);
-                              return false;
-                            }}
-                            className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-gray-100 text-red-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-150"
-                          >
-                            <Plus className="h-3 w-3 sm:h-4 sm:w-4 font-bold" />
-                          </button>
-                        );
-                      } else {
-                        return (
-                          <div className="bg-white rounded-full shadow-lg flex items-center justify-center">
+
+                    {/* Weight Badge - Top Left */}
+                    {product.weight && (
+                      <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-white bg-opacity-90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded text-xs font-bold text-gray-800 shadow-md">
+                        {product.weight}
+                      </div>
+                    )}
+
+                    {/* Add Button with Quantity Control */}
+                    <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2">
+                      {(() => {
+                        const cartItem = cartItems.find(item => item.id === product.id);
+                        const currentQuantity = cartItem ? cartItem.quantity : 0;
+
+                        if (currentQuantity === 0) {
+                          return (
                             <button
                               type="button"
                               onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                console.log('Products: Minus button clicked');
-                                addToCart(product, -1);
-                                return false;
-                              }}
-                              className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-l-full flex items-center justify-center transition-colors"
-                            >
-                              <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
-                            </button>
-                            <span className="px-1 sm:px-2 text-xs sm:text-sm font-bold text-red-600 min-w-[16px] sm:min-w-[20px] text-center">
-                              {currentQuantity}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Products: Plus button clicked');
+                                console.log('Products: Add button clicked - should not refresh');
                                 addToCart(product, 1);
                                 return false;
                               }}
-                              className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-r-full flex items-center justify-center transition-colors"
+                              className="w-6 h-6 sm:w-8 sm:h-8 bg-white hover:bg-gray-100 text-red-600 rounded-full shadow-lg flex items-center justify-center transition-all duration-150"
                             >
-                              <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
+                              <Plus className="h-3 w-3 sm:h-4 sm:w-4 font-bold" />
                             </button>
-                          </div>
-                        );
-                      }
-                    })()}
+                          );
+                        } else {
+                          return (
+                            <div className="bg-white rounded-full shadow-lg flex items-center justify-center">
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  console.log('Products: Minus button clicked');
+                                  addToCart(product, -1);
+                                  return false;
+                                }}
+                                className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-l-full flex items-center justify-center transition-colors"
+                              >
+                                <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
+                              </button>
+                              <span className="px-1 sm:px-2 text-xs sm:text-sm font-bold text-red-600 min-w-[16px] sm:min-w-[20px] text-center">
+                                {currentQuantity}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  console.log('Products: Plus button clicked');
+                                  addToCart(product, 1);
+                                  return false;
+                                }}
+                                className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 hover:bg-gray-100 rounded-r-full flex items-center justify-center transition-colors"
+                              >
+                                <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
+                              </button>
+                            </div>
+                          );
+                        }
+                      })()}
+                    </div>
                   </div>
-                </div>
 
-                {/* Product Info */}
-                <div className="space-y-1">
-                  <h3 className="font-bold text-white text-xs sm:text-sm leading-tight line-clamp-2">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs sm:text-sm font-bold text-white">
-                      Rp {product.price.toLocaleString('id-ID')}
-                    </span>
+                  {/* Product Info */}
+                  <div className="space-y-1">
+                    <h3 className="font-bold text-white text-xs sm:text-sm leading-tight line-clamp-2">
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs sm:text-sm font-bold text-white">
+                        Rp {product.price.toLocaleString('id-ID')}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         )}
 
@@ -1417,7 +1436,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
 
       {/* Floating Checkout Button - Hide when modals are open */}
       {totalItems > 0 && !isUserDataModalOpen && !isCartOpen && (
-        <FloatingCheckoutButton 
+        <FloatingCheckoutButton
           cartItems={cartItems}
           onCheckoutClick={handleCheckout}
           onCartClick={handleCheckout}
@@ -1438,7 +1457,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       )}
 
       {/* Cart Modal */}
-      <CartModal 
+      <CartModal
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}
@@ -1447,7 +1466,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       />
 
       {/* User Data Modal */}
-      <UserDataModal 
+      <UserDataModal
         isOpen={isUserDataModalOpen}
         onClose={() => setIsUserDataModalOpen(false)}
         cartItems={cartItems}

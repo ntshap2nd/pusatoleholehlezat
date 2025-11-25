@@ -57,6 +57,8 @@ import wingkoBabat35Kecil from "@/assets/image/BAKPIA & KUE BASAH/30_WINGKO BABA
 import yangkoKembar from "@/assets/image/BAKPIA & KUE BASAH/31_ YANGKO KEMBAR.jpg";
 import yangkoGiant from "@/assets/image/BAKPIA & KUE BASAH/32_YANGKO GIANT.jpg";
 import yangkoAnekaRasaGose from "@/assets/image/BAKPIA & KUE BASAH/33_YANGKO ANEKA RASA GOSE (SGT).jpg";
+import cenglongPiaNikiEchoPanjang from "@/assets/image/BAKPIA & KUE BASAH/new/CENGLONG PIA NIKI ECHO PANJANG.jpg";
+import kuePiaSariMurni from "@/assets/image/BAKPIA & KUE BASAH/new/KUE PIA SARI MURNI.jpg";
 
 // Minuman Instan imports
 import etawavitOriginal from "@/assets/image/Minuman Instan/1_ETAWAVIT ORIGINAL.jpg";
@@ -492,6 +494,22 @@ const products: Product[] = [
     description: "Yangko aneka rasa gose dengan berbagai varian rasa yang lezat",
     weight: "25 g"
   },
+  {
+    id: 234,
+    name: "CENGLONG PIA NIKI ECHO PANJANG",
+    price: 19000,
+    image: cenglongPiaNikiEchoPanjang,
+    description: "Cenglong pia Niki Echo dengan bentuk panjang dan rasa yang khas",
+    weight: "20 g"
+  },
+  {
+    id: 235,
+    name: "KUE PIA SARI MURNI",
+    price: 30000,
+    image: kuePiaSariMurni,
+    description: "Kue pia Sari Murni dengan resep tradisional dan cita rasa yang lezat",
+    weight: "20 g"
+  },
   // Minuman Instan Products
   {
     id: 49,
@@ -826,22 +844,22 @@ interface ProductCatalogProps {
   onCartClick?: () => void;
 }
 
-export default function ProductCatalog({ 
-  onAddToCart, 
-  searchQuery, 
-  cartItems = [], 
-  onCartClick 
+export default function ProductCatalog({
+  onAddToCart,
+  searchQuery,
+  cartItems = [],
+  onCartClick
 }: ProductCatalogProps) {
   const navigate = useNavigate();
   // Show only featured products (first 4) for showcase, unless searching
   const featuredProducts = products.slice(0, 4);
-  
+
   // Filter products based on search query
-  const filteredProducts = searchQuery 
+  const filteredProducts = searchQuery
     ? products.filter(product =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : featuredProducts;
   return (
     <section id="products" className="py-20 bg-gradient-to-br from-red-50 to-white relative overflow-hidden">
@@ -851,53 +869,53 @@ export default function ProductCatalog({
           <defs>
             <pattern id="simpleBatikPattern" x="0" y="0" width="150" height="150" patternUnits="userSpaceOnUse">
               {/* Enhanced Central Element */}
-              <circle cx="75" cy="75" r="4" fill="rgba(255, 215, 0, 0.3)" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5"/>
-              
+              <circle cx="75" cy="75" r="4" fill="rgba(255, 215, 0, 0.3)" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5" />
+
               {/* Enhanced Corner Elements */}
-              <circle cx="25" cy="25" r="3" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1"/>
-              <circle cx="125" cy="25" r="2.5" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="0.8"/>
-              <circle cx="25" cy="125" r="2.5" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="0.8"/>
-              <circle cx="125" cy="125" r="3" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1"/>
-              
+              <circle cx="25" cy="25" r="3" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1" />
+              <circle cx="125" cy="25" r="2.5" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="0.8" />
+              <circle cx="25" cy="125" r="2.5" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="0.8" />
+              <circle cx="125" cy="125" r="3" fill="rgba(255, 215, 0, 0.25)" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1" />
+
               {/* Enhanced Connecting Lines with Traditional Style */}
-              <path d="M25 75 Q50 70 75 75 Q100 80 125 75" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5" fill="none"/>
-              <path d="M75 25 Q70 50 75 75 Q80 100 75 125" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5" fill="none"/>
-              
+              <path d="M25 75 Q50 70 75 75 Q100 80 125 75" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5" fill="none" />
+              <path d="M75 25 Q70 50 75 75 Q80 100 75 125" stroke="rgba(255, 215, 0, 0.2)" strokeWidth="1.5" fill="none" />
+
               {/* Additional Traditional Motifs */}
-              <circle cx="50" cy="50" r="1.5" fill="rgba(255, 215, 0, 0.2)"/>
-              <circle cx="100" cy="50" r="1.5" fill="rgba(255, 215, 0, 0.2)"/>
-              <circle cx="50" cy="100" r="1.5" fill="rgba(255, 215, 0, 0.2)"/>
-              <circle cx="100" cy="100" r="1.5" fill="rgba(255, 215, 0, 0.2)"/>
+              <circle cx="50" cy="50" r="1.5" fill="rgba(255, 215, 0, 0.2)" />
+              <circle cx="100" cy="50" r="1.5" fill="rgba(255, 215, 0, 0.2)" />
+              <circle cx="50" cy="100" r="1.5" fill="rgba(255, 215, 0, 0.2)" />
+              <circle cx="100" cy="100" r="1.5" fill="rgba(255, 215, 0, 0.2)" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#simpleBatikPattern)"/>
+          <rect width="100%" height="100%" fill="url(#simpleBatikPattern)" />
         </svg>
       </div>
-      
+
       {/* Enhanced Decorative Elements */}
       <div className="absolute top-10 left-10 w-12 h-12 opacity-12">
         <svg viewBox="0 0 32 32" className="w-full h-full fill-yellow-500">
-          <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-          <circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.7" stroke="rgba(255, 215, 0, 0.3)" strokeWidth="1"/>
-          <circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.5"/>
-          <circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.7" stroke="rgba(255, 215, 0, 0.3)" strokeWidth="1" />
+          <circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.5" />
+          <circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.5" />
         </svg>
       </div>
-      
+
       <div className="absolute bottom-10 right-10 w-10 h-10 opacity-15">
         <svg viewBox="0 0 24 24" className="w-full h-full fill-yellow-500">
-          <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.8" stroke="rgba(255, 215, 0, 0.4)" strokeWidth="1.2"/>
-          <circle cx="6" cy="6" r="1.5" fill="currentColor" opacity="0.6"/>
-          <circle cx="18" cy="18" r="1.5" fill="currentColor" opacity="0.6"/>
-          <path d="M6 6 Q12 9 18 18" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.5"/>
+          <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.8" stroke="rgba(255, 215, 0, 0.4)" strokeWidth="1.2" />
+          <circle cx="6" cy="6" r="1.5" fill="currentColor" opacity="0.6" />
+          <circle cx="18" cy="18" r="1.5" fill="currentColor" opacity="0.6" />
+          <path d="M6 6 Q12 9 18 18" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.5" />
         </svg>
       </div>
-      
+
       {/* Additional Floating Elements */}
       <div className="absolute top-1/3 right-20 w-8 h-8 opacity-10">
         <svg viewBox="0 0 32 32" className="w-full h-full fill-yellow-500">
-          <circle cx="16" cy="16" r="5" fill="none" stroke="currentColor" strokeWidth="1.2"/>
-          <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          <circle cx="16" cy="16" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
         </svg>
       </div>
 
@@ -908,7 +926,7 @@ export default function ProductCatalog({
             <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
             {searchQuery ? 'HASIL PENCARIAN' : 'PRODUK UNGGULAN'}
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-red-900 mb-4 sm:mb-6 leading-tight">
             {searchQuery ? 'HASIL PENCARIAN' : 'NIKMATI OLEH-OLEH'}
             <span className="block text-red-600 relative">
@@ -918,17 +936,17 @@ export default function ProductCatalog({
           </h2>
 
           <p className="text-base sm:text-lg lg:text-xl text-red-700 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed font-medium">
-            {searchQuery 
+            {searchQuery
               ? `Menampilkan ${filteredProducts.length} produk yang sesuai dengan pencarian "${searchQuery}"`
               : 'Koleksi jajanan khas Magelang yang dibuat dengan resep turun temurun, menggunakan bahan-bahan berkualitas tinggi untuk memberikan cita rasa yang tak terlupakan.'
             }
           </p>
-          
+
           {!searchQuery && (
             <div className="mt-6 sm:mt-8">
-              <Button 
+              <Button
                 onClick={() => navigate('/products')}
-                variant="outline" 
+                variant="outline"
                 className="bg-white text-red-600 hover:bg-red-50 font-bold px-5 sm:px-8 py-2 sm:py-3 text-base sm:text-lg border-2 border-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 🛒 LIHAT SEMUA PRODUK ({products.length})
@@ -936,12 +954,12 @@ export default function ProductCatalog({
             </div>
           )}
         </div>
-        
+
         {/* Search Results Info */}
         {searchQuery && (
           <div className="text-center mb-8">
             <p className="text-red-700 font-medium">
-              {filteredProducts.length > 0 
+              {filteredProducts.length > 0
                 ? `Menampilkan ${filteredProducts.length} produk untuk "${searchQuery}"`
                 : `Tidak ada produk yang ditemukan untuk "${searchQuery}"`
               }
@@ -953,155 +971,155 @@ export default function ProductCatalog({
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
             {filteredProducts.map((product, index) => {
-            const backgrounds = [
-              'from-red-500 to-red-600',
-              'from-green-500 to-green-600', 
-              'from-orange-500 to-orange-600'
-            ];
-            const bgGradient = backgrounds[index % 3];
-            
-            return (
-              <div 
-                key={product.id}
-                className="group bg-white overflow-hidden shadow-2xl border border-red-100 transform transition-all duration-500 hover:scale-105 hover:-rotate-1 relative"
-                style={{
-                  animationDelay: `${index * 0.1}s`
-                }}
-              >
-                {/* Minimalist Corner Pattern */}
-                <div className="absolute top-2 right-2 w-6 h-6 opacity-15 z-10">
-                  <svg viewBox="0 0 24 24" className="w-full h-full fill-red-600">
-                    {/* Simple Central Motif */}
-                    <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1"/>
-                    <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.6"/>
-                    
-                    {/* Corner Elements */}
-                    <circle cx="6" cy="6" r="1" fill="currentColor" opacity="0.4"/>
-                    <circle cx="18" cy="6" r="1" fill="currentColor" opacity="0.4"/>
-                    <circle cx="6" cy="18" r="1" fill="currentColor" opacity="0.4"/>
-                    <circle cx="18" cy="18" r="1" fill="currentColor" opacity="0.4"/>
-                  </svg>
-                </div>
+              const backgrounds = [
+                'from-red-500 to-red-600',
+                'from-green-500 to-green-600',
+                'from-orange-500 to-orange-600'
+              ];
+              const bgGradient = backgrounds[index % 3];
 
-                {/* Bestseller Badge */}
-                {index === 0 && (
-                  <div className="absolute top-2 left-2 z-20 bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 font-bold text-xs shadow-lg flex items-center gap-1">
-                    <Star className="w-3 h-3" /> FAVORIT
+              return (
+                <div
+                  key={product.id}
+                  className="group bg-white overflow-hidden shadow-2xl border border-red-100 transform transition-all duration-500 hover:scale-105 hover:-rotate-1 relative"
+                  style={{
+                    animationDelay: `${index * 0.1}s`
+                  }}
+                >
+                  {/* Minimalist Corner Pattern */}
+                  <div className="absolute top-2 right-2 w-6 h-6 opacity-15 z-10">
+                    <svg viewBox="0 0 24 24" className="w-full h-full fill-red-600">
+                      {/* Simple Central Motif */}
+                      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1" />
+                      <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.6" />
+
+                      {/* Corner Elements */}
+                      <circle cx="6" cy="6" r="1" fill="currentColor" opacity="0.4" />
+                      <circle cx="18" cy="6" r="1" fill="currentColor" opacity="0.4" />
+                      <circle cx="6" cy="18" r="1" fill="currentColor" opacity="0.4" />
+                      <circle cx="18" cy="18" r="1" fill="currentColor" opacity="0.4" />
+                    </svg>
                   </div>
-                )}
 
-                {/* Product Card Content */}
-                <div className="p-2">
-                  {/* Product Image Area - Optimized */}
-                  <div className="relative mb-3 overflow-hidden bg-white shadow-lg">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
-                    />
-                    
-                    {/* Weight Badge - Top Left */}
-                    {product.weight && (
-                      <div className="absolute top-2 left-2 bg-white bg-opacity-90 backdrop-blur-sm px-2 py-1 rounded-md shadow-md z-30">
-                        <span className="text-xs font-bold text-gray-800">
-                          {product.weight}
-                        </span>
-                      </div>
-                    )}
-                    
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-3 left-3 right-3">
-                        <div className="flex items-center justify-center gap-1 mb-2">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 fill-yellow-300 text-yellow-300" />
-                          ))}
+                  {/* Bestseller Badge */}
+                  {index === 0 && (
+                    <div className="absolute top-2 left-2 z-20 bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 font-bold text-xs shadow-lg flex items-center gap-1">
+                      <Star className="w-3 h-3" /> FAVORIT
+                    </div>
+                  )}
+
+                  {/* Product Card Content */}
+                  <div className="p-2">
+                    {/* Product Image Area - Optimized */}
+                    <div className="relative mb-3 overflow-hidden bg-white shadow-lg">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+
+                      {/* Weight Badge - Top Left */}
+                      {product.weight && (
+                        <div className="absolute top-2 left-2 bg-white bg-opacity-90 backdrop-blur-sm px-2 py-1 rounded-md shadow-md z-30">
+                          <span className="text-xs font-bold text-gray-800">
+                            {product.weight}
+                          </span>
+                        </div>
+                      )}
+
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 left-3 right-3">
+                          <div className="flex items-center justify-center gap-1 mb-2">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-3 h-3 fill-yellow-300 text-yellow-300" />
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Price Badge */}
-                    <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 text-sm font-bold shadow-lg">
-                      Rp {(product.price / 1000)}k
-                    </div>
-                  </div>
-                  
-                  {/* Product Title */}
-                  <h3 className="text-lg font-bold text-red-900 mb-2 line-clamp-1">
-                    {product.name}
-                  </h3>
-                  
-                  {/* Product Info - Compact */}
-                  <div className="space-y-3">
-                    {/* Price */}
-                    <div className="flex items-center justify-between">
-                      <div className="text-xl font-black text-red-900">
-                        Rp {product.price.toLocaleString()}
-                      </div>
-                      <div className="text-xs text-green-600 font-bold bg-green-50 px-2 py-1">
-                        ✓ Ready
+
+                      {/* Price Badge */}
+                      <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 text-sm font-bold shadow-lg">
+                        Rp {(product.price / 1000)}k
                       </div>
                     </div>
 
-                    {/* Action Area - Quantity Selector */}
-                    <div className="flex gap-2">
-                      {(() => {
-                        const cartItem = cartItems?.find(item => item.id === product.id);
-                        const currentQuantity = cartItem ? cartItem.quantity : 0;
-                        
-                        if (currentQuantity === 0) {
-                          return (
-                            <Button 
-                              type="button"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                onAddToCart(product, 1);
-                              }}
-                              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 text-sm transition-all duration-300 transform hover:scale-105"
-                            >
-                              <Plus className="h-4 w-4 mr-1" />
-                              Add to Cart
-                            </Button>
-                          );
-                        } else {
-                          return (
-                            <div className="w-full bg-white rounded border border-red-200 flex items-center justify-center">
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  onAddToCart(product, -1);
-                                }}
-                                className="w-8 h-8 text-red-600 hover:bg-gray-100 flex items-center justify-center transition-colors"
-                              >
-                                <Minus className="h-3 w-3" />
-                              </button>
-                              <span className="px-3 text-sm font-bold text-red-600 min-w-[30px] text-center">
-                                {currentQuantity}
-                              </span>
-                              <button
+                    {/* Product Title */}
+                    <h3 className="text-lg font-bold text-red-900 mb-2 line-clamp-1">
+                      {product.name}
+                    </h3>
+
+                    {/* Product Info - Compact */}
+                    <div className="space-y-3">
+                      {/* Price */}
+                      <div className="flex items-center justify-between">
+                        <div className="text-xl font-black text-red-900">
+                          Rp {product.price.toLocaleString()}
+                        </div>
+                        <div className="text-xs text-green-600 font-bold bg-green-50 px-2 py-1">
+                          ✓ Ready
+                        </div>
+                      </div>
+
+                      {/* Action Area - Quantity Selector */}
+                      <div className="flex gap-2">
+                        {(() => {
+                          const cartItem = cartItems?.find(item => item.id === product.id);
+                          const currentQuantity = cartItem ? cartItem.quantity : 0;
+
+                          if (currentQuantity === 0) {
+                            return (
+                              <Button
                                 type="button"
                                 onClick={(e) => {
                                   e.preventDefault();
                                   e.stopPropagation();
                                   onAddToCart(product, 1);
                                 }}
-                                className="w-8 h-8 text-red-600 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 text-sm transition-all duration-300 transform hover:scale-105"
                               >
-                                <Plus className="h-3 w-3" />
-                              </button>
-                            </div>
-                          );
-                        }
-                      })()}
+                                <Plus className="h-4 w-4 mr-1" />
+                                Add to Cart
+                              </Button>
+                            );
+                          } else {
+                            return (
+                              <div className="w-full bg-white rounded border border-red-200 flex items-center justify-center">
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    onAddToCart(product, -1);
+                                  }}
+                                  className="w-8 h-8 text-red-600 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                                >
+                                  <Minus className="h-3 w-3" />
+                                </button>
+                                <span className="px-3 text-sm font-bold text-red-600 min-w-[30px] text-center">
+                                  {currentQuantity}
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    onAddToCart(product, 1);
+                                  }}
+                                  className="w-8 h-8 text-red-600 hover:bg-gray-100 flex items-center justify-center transition-colors"
+                                >
+                                  <Plus className="h-3 w-3" />
+                                </button>
+                              </div>
+                            );
+                          }
+                        })()}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           </div>
         ) : (
           <div className="text-center py-16">
@@ -1117,13 +1135,13 @@ export default function ProductCatalog({
             {/* Background Batik Pattern */}
             <div className="absolute inset-0 opacity-5">
               <svg viewBox="0 0 200 200" className="w-full h-full fill-yellow-500">
-                <circle cx="50" cy="50" r="8"/>
-                <circle cx="150" cy="50" r="12"/>
-                <circle cx="100" cy="100" r="15"/>
-                <circle cx="50" cy="150" r="10"/>
-                <circle cx="150" cy="150" r="6"/>
-                <path d="M25 25 Q75 20 125 25 Q175 30 225 25" stroke="currentColor" strokeWidth="2" fill="none"/>
-                <path d="M25 175 Q75 170 125 175 Q175 180 225 175" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="50" cy="50" r="8" />
+                <circle cx="150" cy="50" r="12" />
+                <circle cx="100" cy="100" r="15" />
+                <circle cx="50" cy="150" r="10" />
+                <circle cx="150" cy="150" r="6" />
+                <path d="M25 25 Q75 20 125 25 Q175 30 225 25" stroke="currentColor" strokeWidth="2" fill="none" />
+                <path d="M25 175 Q75 170 125 175 Q175 180 225 175" stroke="currentColor" strokeWidth="2" fill="none" />
               </svg>
             </div>
 
@@ -1132,17 +1150,17 @@ export default function ProductCatalog({
                 <PartyPopper className="w-8 h-8 text-red-600" /> PENAWARAN ISTIMEWA! <PartyPopper className="w-8 h-8 text-red-600" />
               </h3>
               <p className="text-lg md:text-xl text-red-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Beli 3 produk atau lebih dan dapatkan <strong className="text-red-900">DISKON 15%</strong> + 
+                Beli 3 produk atau lebih dan dapatkan <strong className="text-red-900">DISKON 15%</strong> +
                 <strong className="text-green-600"> GRATIS ONGKIR</strong> ke seluruh Indonesia!
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-black px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 shadow-xl">
                   📞 HUBUNGI SEKARANG!
                 </Button>
-                <Button 
+                <Button
                   onClick={() => navigate('/products')}
-                  variant="outline" 
+                  variant="outline"
                   className="bg-white text-red-600 hover:bg-red-50 font-bold px-8 py-4 text-lg border-2 border-red-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
                 >
                   🛒 LIHAT SEMUA PRODUK

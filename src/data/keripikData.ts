@@ -57,6 +57,10 @@ import ceripingGadung from "@/assets/image/KERIPIK/CERIPING GADUNG.jpg";
 import kerupukKoinUdang from "@/assets/image/KERIPIK/KERUPUK KOIN UDANG.jpg";
 import sukuBulat from "@/assets/image/KERIPIK/SUKUN BULAT.jpg";
 import ususAyamSuper from "@/assets/image/KERIPIK/USUS AYAM SUPER.jpg";
+import keripikBelutCrispy from "@/assets/image/KERIPIK/new/KERIPIK BELUT CRISPY.jpg";
+import sarangMadu from "@/assets/image/KERIPIK/new/SARANG MADU.jpg";
+import keripikParuSuper from "@/assets/image/KERIPIK/new/KERIPIK PARU SUPER.jpg";
+import intipMadu58 from "@/assets/image/KERIPIK/new/INTIP MADU 58.jpg";
 
 export interface KeripikProduct {
   id: number;
@@ -206,10 +210,10 @@ export const keripikProducts: KeripikProduct[] = [
   },
   {
     id: 3016,
-    name: "KERIPIK BELUT KRIUK",
-    price: 35000,
-    image: keripikBelutKriuk,
-    description: "Keripik belut kriuk dengan tekstur sangat renyah dan gurih",
+    name: "KERIPIK BELUT CRISPY",
+    price: 42000,
+    image: keripikBelutCrispy,
+    description: "Keripik belut crispy dengan tekstur sangat renyah dan gurih",
     category: "Keripik",
     weight: "235 gr"
   },
@@ -607,6 +611,33 @@ export const keripikProducts: KeripikProduct[] = [
     price: 45000,
     image: ususAyamSuper,
     description: "Keripik usus ayam super dengan tekstur super renyah dan gurih",
+    category: "Keripik",
+    weight: "235 gr"
+  },
+  {
+    id: 3061,
+    name: "SARANG MADU",
+    price: 16500,
+    image: sarangMadu,
+    description: "Keripik sarang madu dengan tekstur renyah seperti sarang lebah yang manis",
+    category: "Keripik",
+    weight: "235 gr"
+  },
+  {
+    id: 3062,
+    name: "KERIPIK PARU SUPER",
+    price: 62000,
+    image: keripikParuSuper,
+    description: "Keripik paru super premium dengan bumbu rempah yang gurih dan lezat",
+    category: "Keripik",
+    weight: "250 gr"
+  },
+  {
+    id: 3063,
+    name: "INTIP MADU 58",
+    price: 12000,
+    image: intipMadu58,
+    description: "Keripik intip madu dengan rasa manis dan tekstur renyah khas",
     category: "Keripik",
     weight: "235 gr"
   }

@@ -19,15 +19,18 @@ import permenSusuTpl from "@/assets/image/PERMEN & MANISAN/PERMEN SUSU TPL.jpg";
 import coklatBolaEmasTpl from "@/assets/image/PERMEN & MANISAN/COKLAT BOLA EMAS TPL.jpg";
 import jellyMalaysiaTpl from "@/assets/image/PERMEN & MANISAN/JELLY MALAYSIA TPL.jpg";
 import jellyRollTpl from "@/assets/image/PERMEN & MANISAN/JELLY ROLL TPL.jpg";
+import jellySandwichTpl from "@/assets/image/PERMEN & MANISAN/new/JELLY SANDWICH TPL.jpg";
+import permenTexasLiliputTpl from "@/assets/image/PERMEN & MANISAN/new/PERMEN TEXAS LILIPUT TPL.jpg";
+import permenXiomemeTpl from "@/assets/image/PERMEN & MANISAN/new/PERMEN XIOMEME TPL.jpg";
 
 export interface PermenManisanProduct {
   id: number;
   name: string;
-  price: number;     
+  price: number;
   image: string;
   description: string;
   category: "Permen & Manisan";
-  weight: string;    
+  weight: string;
 }
 
 
@@ -209,6 +212,33 @@ export const permenManisanProducts: PermenManisanProduct[] = [
     price: 47500,
     image: jellyRollTpl,
     description: "Jelly roll dengan bentuk unik dan rasa manis yang lezat",
+    category: "Permen & Manisan",
+    weight: "400 gr"
+  },
+  {
+    id: 2021,
+    name: "JELLY SANDWICH TPL",
+    price: 47500,
+    image: jellySandwichTpl,
+    description: "Jelly sandwich dengan dua lapisan rasa yang berbeda dan tekstur kenyal",
+    category: "Permen & Manisan",
+    weight: "400 gr"
+  },
+  {
+    id: 2022,
+    name: "PERMEN TEXAS LILIPUT TPL",
+    price: 25000,
+    image: permenTexasLiliputTpl,
+    description: "Permen Texas Liliput dengan rasa manis yang khas dan ukuran mini yang praktis",
+    category: "Permen & Manisan",
+    weight: "400 gr"
+  },
+  {
+    id: 2023,
+    name: "PERMEN XIOMEME TPL",
+    price: 34000,
+    image: permenXiomemeTpl,
+    description: "Permen Xiomeme dengan rasa unik yang manis dan menyegarkan",
     category: "Permen & Manisan",
     weight: "400 gr"
   }

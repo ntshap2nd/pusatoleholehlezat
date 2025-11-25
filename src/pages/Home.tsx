@@ -75,6 +75,8 @@ import wingkoBabat35Kecil from "@/assets/image/BAKPIA & KUE BASAH/30_WINGKO BABA
 import yangkoKembar from "@/assets/image/BAKPIA & KUE BASAH/31_ YANGKO KEMBAR.jpg";
 import yangkoGiant from "@/assets/image/BAKPIA & KUE BASAH/32_YANGKO GIANT.jpg";
 import yangkoAnekaRasaGose from "@/assets/image/BAKPIA & KUE BASAH/33_YANGKO ANEKA RASA GOSE (SGT).jpg";
+import cenglongPiaNikiEchoPanjang from "@/assets/image/BAKPIA & KUE BASAH/new/CENGLONG PIA NIKI ECHO PANJANG.jpg";
+import kuePiaSariMurni from "@/assets/image/BAKPIA & KUE BASAH/new/KUE PIA SARI MURNI.jpg";
 
 // Minuman Instan imports
 import etawavitOriginal from "@/assets/image/Minuman Instan/1_ETAWAVIT ORIGINAL.jpg";
@@ -575,6 +577,24 @@ const allProducts: Product[] = [
     description: "Yangko aneka rasa gose dengan berbagai varian rasa yang lezat",
     category: "Bakpia & Kue Basah",
     weight: "25 g"
+  },
+  {
+    id: 234,
+    name: "CENGLONG PIA NIKI ECHO PANJANG",
+    price: 19000,
+    image: cenglongPiaNikiEchoPanjang,
+    description: "Cenglong pia Niki Echo dengan bentuk panjang dan rasa yang khas",
+    category: "Bakpia & Kue Basah",
+    weight: "20 g"
+  },
+  {
+    id: 235,
+    name: "KUE PIA SARI MURNI",
+    price: 30000,
+    image: kuePiaSariMurni,
+    description: "Kue pia Sari Murni dengan resep tradisional dan cita rasa yang lezat",
+    category: "Bakpia & Kue Basah",
+    weight: "20 g"
   },
   // Minuman Instan Products
   {
