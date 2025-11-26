@@ -3,6 +3,8 @@
  * Track events dan user interactions
  */
 
+import { ANALYTICS_CONFIG } from '@/config/analytics-config';
+
 // Type definitions
 interface GtagConfig {
   page_title?: string;
@@ -43,6 +45,8 @@ declare global {
   }
 }
 
+const GA_ID = ANALYTICS_CONFIG.googleAnalytics.id;
+
 /**
  * Check if GA is loaded
  */
@@ -56,7 +60,7 @@ export const isGALoaded = (): boolean => {
 export const trackPageView = (url: string, title?: string) => {
   if (!isGALoaded()) return;
 
-  window.gtag!('config', 'G-LG80GBQEFP', {
+  window.gtag!('config', GA_ID, {
     page_path: url,
     page_title: title || document.title,
     page_location: window.location.href

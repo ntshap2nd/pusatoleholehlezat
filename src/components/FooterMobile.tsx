@@ -1,4 +1,5 @@
 import { MapPin, Phone, Instagram, Clock, Heart } from "lucide-react";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
                 L
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-black text-white">pusatoleholehlezat</h3>
+                <h3 className="text-base sm:text-lg font-black text-white">{BUSINESS_CONTACT.name}</h3>
                 <p className="text-xs sm:text-sm font-bold text-red-400">LEZAT</p>
               </div>
             </div>
@@ -30,15 +31,15 @@ export default function Footer() {
               <div className="space-y-1 sm:space-y-2">
                 <div className="flex items-center justify-center gap-2 text-gray-300">
                   <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm">Jl. Ikhlas Blok D1 No.1, Magelang</span>
+                  <span className="text-xs sm:text-sm">{BUSINESS_CONTACT.address.street}, {BUSINESS_CONTACT.address.city}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-gray-300">
                   <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm">(0293) 313131</span>
+                  <span className="text-xs sm:text-sm">{BUSINESS_CONTACT.phone.display}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-gray-300">
                   <Instagram className="h-3 w-3 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm">@tokolezat</span>
+                  <span className="text-xs sm:text-sm\">@{BUSINESS_CONTACT.social.instagram}</span>
                 </div>
               </div>
             </div>
@@ -50,7 +51,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center gap-2 text-gray-300">
                   <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
                   <div className="text-xs sm:text-sm">
-                    <p>Senin - Jumat: 08:00 - 17:00</p>
+                    <p>{BUSINESS_CONTACT.hours.monday}</p>
                   </div>
                 </div>
                 <p className="text-xs sm:text-sm text-gray-300">Sabtu: 08:00 - 15:00 | Minggu: Tutup</p>
@@ -63,7 +64,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-4 sm:mt-6 pt-3 sm:pt-4">
           <div className="flex flex-col items-center justify-center gap-2 sm:gap-3">
             <p className="text-gray-400 text-xs text-center">
-              © 2024 Pusat Oleh-Oleh Lezat. All rights reserved.
+              © 2024 {BUSINESS_CONTACT.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-1 sm:gap-2 text-gray-400 text-xs">
               <span>Made with</span>

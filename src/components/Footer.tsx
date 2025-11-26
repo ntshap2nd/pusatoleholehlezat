@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock, Instagram } from "lucide-react";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 export default function Footer() {
   return (
@@ -14,20 +15,20 @@ export default function Footer() {
             <div className="flex items-center justify-center md:justify-start gap-2">
               <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <p className="font-medium text-sm sm:text-base">
-                Jl. Ikhlas Blok D1 No.1, Magelang
+                {BUSINESS_CONTACT.address.street}, {BUSINESS_CONTACT.address.city}
               </p>
             </div>
             
             {/* Phone */}
             <div className="flex items-center justify-center md:justify-start gap-2">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              <p className="font-medium text-sm sm:text-base">(0293) 313131</p>
+              <p className="font-medium text-sm sm:text-base">{BUSINESS_CONTACT.phone.display}</p>
             </div>
             
             {/* Instagram */}
             <div className="flex items-center justify-center md:justify-start gap-2">
               <Instagram className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              <p className="font-medium text-sm sm:text-base">tokolezatmagelang</p>
+              <p className="font-medium text-sm sm:text-base">@{BUSINESS_CONTACT.social.instagram}</p>
             </div>
           </div>
 
@@ -39,7 +40,7 @@ export default function Footer() {
               <div>
                 <p className="font-bold text-sm sm:text-base mb-0.5">Toko Buka</p>
                 <p className="text-sm sm:text-base">
-                  pukul 09.00 - 18.00 WIB
+                  pukul {BUSINESS_CONTACT.hours.monday}
                 </p>
               </div>
               

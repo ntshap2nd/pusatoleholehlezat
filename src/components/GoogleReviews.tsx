@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Star, Quote, MapPin, ExternalLink, User } from "lucide-react";
+import { MAPS_CONFIG } from "@/config/maps-config";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 // Interface untuk Google Reviews
 interface GoogleReview {
@@ -64,12 +66,12 @@ const dummyGoogleReviews: GoogleReview[] = [
 ];
 
 const placeDetails: GooglePlaceDetails = {
-  place_id: "ChIJXXXXXXXXXXXXXXXXXXXX", // Dummy place ID
-  name: "Pusat Oleh-Oleh Lezat",
+  place_id: MAPS_CONFIG.googlePlaces.placeId || "ChIJXXXXXXXXXXXXXXXXXXXX",
+  name: BUSINESS_CONTACT.name,
   rating: 4.6,
   user_ratings_total: 2469,
   reviews: dummyGoogleReviews,
-  url: "https://www.google.com/search?sca_esv=ca19146f6630880d&hl=id&sxsrf=AE3TifMNw5Zv-LfPcsAVUFRCMfAt40NfSw:1759457923741&si=AMgyJEvkVjFQtirYNBhM3ZJIRTaSJ6PxY6y1_6WZHGInbzDnMU9rMM1X2urOrZKtWeV3bgYIvEbSx8sd5qnyqI7Y9dRKAnsQ91-_wCT2vN37GX4EfjoSQx-GSHqdp4CoqJ_gXb5A_bv-X7LReG55hydwC_gRWpKLLw%3D%3D&q=Pusat+Oleh+-+Oleh+Lezat+Ulasan&sa=X&ved=2ahUKEwjFyarE-4aQAxWb1DgGHfeUBoUQ0bkNegQILBAD&biw=1482&bih=787&dpr=1.25" // Link ke Google review search
+  url: `https://www.google.com/maps/place/${encodeURIComponent(BUSINESS_CONTACT.name)}`
 };
 
 // Fungsi untuk fetch Google Reviews (placeholder untuk implementasi real)

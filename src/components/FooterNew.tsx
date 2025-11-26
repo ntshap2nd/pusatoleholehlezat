@@ -1,4 +1,6 @@
 import { MapPin, Phone, Instagram } from "lucide-react";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
+import { SOCIAL_MEDIA } from "@/config/social-media";
 
 export default function Footer() {
   return (
@@ -12,20 +14,20 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0" />
-                <span className="text-base">Jl. Ikhlas Blok D1 No.1, Magelang</span>
+                <span className="text-base">{BUSINESS_CONTACT.address.street}, {BUSINESS_CONTACT.address.city}</span>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span className="text-base">(0293) 313131</span>
+                <span className="text-base">{BUSINESS_CONTACT.phone.display}</span>
               </div>
               <a 
-                href="https://www.instagram.com/tokolezatmagelang/" 
+                href={SOCIAL_MEDIA.instagram.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center md:justify-start gap-3 hover:text-yellow-300 transition-colors cursor-pointer"
               >
                 <Instagram className="h-5 w-5 flex-shrink-0" />
-                <span className="text-base">tokolezatmagelang</span>
+                <span className="text-base">@{BUSINESS_CONTACT.social.instagram}</span>
               </a>
             </div>
           </div>
@@ -39,7 +41,7 @@ export default function Footer() {
                 <h5 className="text-lg font-bold mb-2">Toko Offline</h5>
                 <div className="space-y-1 text-sm">
                   <p>Senin - Minggu</p>
-                  <p className="font-semibold">09.00 - 18.00 WIB</p>
+                  <p className="font-semibold">{BUSINESS_CONTACT.hours.monday}</p>
                 </div>
               </div>
 

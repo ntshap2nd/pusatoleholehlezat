@@ -1,13 +1,15 @@
 import { MapPin, Phone, Clock, Instagram, Mail, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
+import { SOCIAL_MEDIA } from "@/config/social-media";
 
 export default function ContactLocation() {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/6229313131", "_blank");
+    window.open(BUSINESS_CONTACT.whatsapp.getLink(), "_blank");
   };
 
   const handleInstagram = () => {
-    window.open("https://instagram.com/tokolezat", "_blank");
+    window.open(SOCIAL_MEDIA.instagram.url, "_blank");
   };
 
   const handleGoogleMaps = () => {
@@ -56,9 +58,9 @@ export default function ContactLocation() {
             <div>
               <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Alamat</h3>
               <div className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-                <p>Jl. Ikhlas Blok D1 No.1, Magelang</p>
-                <p>📞 (0293) 313131</p>
-                <p>📱 @tokolezatmagelang</p>
+                <p>{BUSINESS_CONTACT.address.street}, {BUSINESS_CONTACT.address.city}</p>
+                <p>📞 {BUSINESS_CONTACT.phone.display}</p>
+                <p>📱 @{BUSINESS_CONTACT.social.instagram}</p>
               </div>
             </div>
             
@@ -67,7 +69,7 @@ export default function ContactLocation() {
               <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">Jam Operasional</h3>
               <div className="space-y-1 text-sm sm:text-base">
                 <p>Toko Buka</p>
-                <p>pukul 09.00 - 18.00 WIB</p>
+                <p>pukul {BUSINESS_CONTACT.hours.monday}</p>
                 <p className="mt-2">Online</p>
                 <p>Senin - Sabtu</p>
                 <p>pukul 09.00 - 17.00 WIB</p>

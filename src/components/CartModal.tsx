@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Product } from "./ProductCard";
 import { useToast } from "@/hooks/use-toast";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 export interface CartItem extends Product {
   quantity: number;
@@ -61,8 +62,8 @@ const handleCheckout = (cartItems: CartItem[], totalPrice: number, toast: ToastF
   // Add total
   message += ` *Total Pembayaran: ${formattedPrice}* Mohon konfirmasi pesanan saya. Terima kasih!`;
   
-  // Force use phone number format for both mobile and desktop
-  const whatsappNumber = "6285122614122"; // Admin's WhatsApp number
+  // Use WhatsApp number from config
+  const whatsappNumber = BUSINESS_CONTACT.whatsapp.getFormattedNumber();
 
   try {
     // Show loading toast

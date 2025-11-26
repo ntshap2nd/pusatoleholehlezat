@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logoImage from "@/assets/logo.png";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 interface HeaderProps {
   cartItemCount: number;
@@ -48,8 +49,8 @@ export default function Header({ cartItemCount, onCartClick, searchQuery, onSear
             <span className="hidden sm:inline">• GRATIS ONGKIR di atas Rp 100.000</span>
           </div>
           <div className="flex items-center gap-2 sm:gap-4">
-            <span className="font-semibold">(0293) 313131</span>
-            <span className="hidden md:inline">• Jl. Ikhlas Blok D1 No.1</span>
+            <span className="font-semibold">{BUSINESS_CONTACT.phone.display}</span>
+            <span className="hidden md:inline">• {BUSINESS_CONTACT.address.street}</span>
           </div>
         </div>
       </div>

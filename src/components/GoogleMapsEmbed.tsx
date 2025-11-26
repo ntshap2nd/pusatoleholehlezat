@@ -1,4 +1,6 @@
 import { MapPin, ExternalLink, Star } from "lucide-react";
+import { MAPS_CONFIG } from "@/config/maps-config";
+import { BUSINESS_CONTACT } from "@/config/business-contact";
 
 interface GoogleMapsEmbedProps {
   placeId?: string;
@@ -7,19 +9,22 @@ interface GoogleMapsEmbedProps {
 }
 
 export default function GoogleMapsEmbed({ 
-  placeId = "ChIJXXXXXXXXXXXXXXXXXX", // Replace with real Place ID
-  businessName = "Pusat Oleh-Oleh Lezat Magelang",
-  address = "Jl. Ikhlas Blok D1 No.1, Magelang, Cilacap"
+  placeId = MAPS_CONFIG.googlePlaces.placeId || "ChIJXXXXXXXXXXXXXXXXXX",
+  businessName = BUSINESS_CONTACT.name,
+  address = BUSINESS_CONTACT.address.fullAddress
 }: GoogleMapsEmbedProps) {
   
-  // Google Maps embed URL
-  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_API_KEY&q=place_id:${placeId}&zoom=16`;
+  // Google Maps embed URL with fallback
+  const apiKey = MAPS_CONFIG.googleMaps.apiKey;
+  const embedUrl = apiKey 
+    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=place_id:${placeId}&zoom=16`
+    : `https://maps.google.com/maps?q=${BUSINESS_CONTACT.coordinates.latitude},${BUSINESS_CONTACT.coordinates.longitude}&hl=id&z=16&output=embed`;
   
   // Google Maps link for reviews
-  const mapsUrl = `https://www.google.com/search?sca_esv=ca19146f6630880d&hl=id&sxsrf=AE3TifMNw5Zv-LfPcsAVUFRCMfAt40NfSw:1759457923741&si=AMgyJEvkVjFQtirYNBhM3ZJIRTaSJ6PxY6y1_6WZHGInbzDnMU9rMM1X2urOrZKtWeV3bgYIvEbSx8sd5qnyqI7Y9dRKAnsQ91-_wCT2vN37GX4EfjoSQx-GSHqdp4CoqJ_gXb5A_bv-X7LReG55hydwC_gRWpKLLw%3D%3D&q=Pusat+Oleh+-+Oleh+Lezat+Ulasan&sa=X&ved=2ahUKEwjFyarE-4aQAxWb1DgGHfeUBoUQ0bkNegQILBAD&biw=1482&bih=787&dpr=1.25`;
+  const mapsUrl = `https://www.google.com/maps/place/${encodeURIComponent(businessName)}`;
   
   // Write review URL
-  const writeReviewUrl = `https://www.google.com/search?sca_esv=ca19146f6630880d&hl=id&sxsrf=AE3TifMNw5Zv-LfPcsAVUFRCMfAt40NfSw:1759457923741&si=AMgyJEvkVjFQtirYNBhM3ZJIRTaSJ6PxY6y1_6WZHGInbzDnMU9rMM1X2urOrZKtWeV3bgYIvEbSx8sd5qnyqI7Y9dRKAnsQ91-_wCT2vN37GX4EfjoSQx-GSHqdp4CoqJ_gXb5A_bv-X7LReG55hydwC_gRWpKLLw%3D%3D&q=Pusat+Oleh+-+Oleh+Lezat+Ulasan&sa=X&ved=2ahUKEwjFyarE-4aQAxWb1DgGHfeUBoUQ0bkNegQILBAD&biw=1482&bih=787&dpr=1.25`;
+  const writeReviewUrl = mapsUrl;
   
   return (
     <section className="py-8 sm:py-12 bg-white">

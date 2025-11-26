@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_CONFIG } from "@/config/site-config";
 
 interface SEOProps {
     title?: string;
@@ -22,8 +23,8 @@ export function SEO({
         "camilan tradisional",
         "oleh-oleh jogja",
     ],
-    ogImage = "https://pusatoleholehlezat.com/og-image.jpg",
-    canonical = "https://pusatoleholehlezat.com",
+    ogImage = `${SITE_CONFIG.domain}/og-image.jpg`,
+    canonical = SITE_CONFIG.domain,
 }: SEOProps) {
     const keywordsString = keywords.join(", ");
 

@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from '@/config/site-config';
+
 export interface PageSEO {
     title: string;
     description: string;
@@ -38,7 +40,7 @@ export const SEO_CONFIG = {
                 "permen manisan",
                 "toko oleh-oleh",
             ],
-            canonical: "https://pusatoleholehlezat.com/",
+            canonical: SITE_CONFIG.getCanonicalUrl('/'),
         },
 
         products: {
@@ -53,7 +55,7 @@ export const SEO_CONFIG = {
                 "bakpia pathok",
                 "sus coklat",
             ],
-            canonical: "https://pusatoleholehlezat.com/products",
+            canonical: SITE_CONFIG.getCanonicalUrl('/products'),
         },
 
         location: {
@@ -67,7 +69,7 @@ export const SEO_CONFIG = {
                 "toko oleh-oleh terdekat",
                 "jam buka toko",
             ],
-            canonical: "https://pusatoleholehlezat.com/location",
+            canonical: SITE_CONFIG.getCanonicalUrl('/location'),
         },
     },
 
