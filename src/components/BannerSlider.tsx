@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import bannerWebShop1 from "@/assets/Banner_Web-Shop_Banner 1.jpg";
 import bannerWebShop2 from "@/assets/Banner_Web-Shop_Banner 2.jpg";
-import bannerWebShop3 from "@/assets/Banner_Web-Shop_Banner 3.jpg";
 import bannerWebShop4 from "@/assets/Banner_Web-Shop_Banner 4.jpg";
 
 const bannerSlides = [
@@ -16,11 +15,6 @@ const bannerSlides = [
     id: 2,
     image: bannerWebShop2,
     category: "PALMA" // Bolu Panggang -> PALMA
-  },
-  {
-    id: 3,
-    image: bannerWebShop3,
-    category: null // No link for banner 3
   },
   {
     id: 4,
