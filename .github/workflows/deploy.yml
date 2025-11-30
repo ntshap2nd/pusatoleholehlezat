@@ -37,12 +37,13 @@ jobs:
       with:
         server: 145.79.25.5
         username: u221967722
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: toko_Lezat00
         local-dir: ./dist/
         server-dir: /public_html/
         dangerous-clean-slate: false
         exclude: |
           **/.git*
           **/.git*/**
+
 
           **/node_modules/**
