@@ -41,7 +41,7 @@ jobs:
         protocol: ftp
         port: 21
         local-dir: ./dist/
-        server-dir: /
+        server-dir: ./  
         dangerous-clean-slate: false
         exclude: |
           **/.git*
@@ -56,3 +56,4 @@ jobs:
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         working-directory: ./
         vercel-args: '--prod'
+
