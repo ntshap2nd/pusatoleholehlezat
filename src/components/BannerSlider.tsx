@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import bannerWebShop1 from "@/assets/Banner_Web-Shop_Banner 1.jpg";
 import bannerWebShop2 from "@/assets/Banner_Web-Shop_Banner 2.jpg";
 import bannerWebShop4 from "@/assets/Banner_Web-Shop_Banner 4.jpg";
+import bannerFreeOngkirDesember from "@/assets/LEZAT_Socmed-1_Banner Web - Free Ongkir Desember.jpg";
 
 const bannerSlides = [
   {
@@ -20,6 +21,11 @@ const bannerSlides = [
     id: 4,
     image: bannerWebShop4,
     category: "Lain-lain" // Tas Belanja -> Lain-lain
+  },
+  {
+    id: 5,
+    image: bannerFreeOngkirDesember,
+    category: null // Promo Free Ongkir Desember
   }
 ];
 
