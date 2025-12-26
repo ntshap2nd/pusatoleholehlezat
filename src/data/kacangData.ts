@@ -42,7 +42,7 @@ export const kacangProducts: KacangProduct[] = [
   {
     id: 4003,
     name: "KACANG JEPANG BAWANG TPL",
-    price: 28500,
+    price: 29000,
     image: kacangJepangBawangTpl,
     description: "Kacang jepang dengan bumbu bawang yang harum dan gurih",
     category: "Kacang-kacangan",

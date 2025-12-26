@@ -210,15 +210,24 @@ export const keripikProducts: KeripikProduct[] = [
   },
   {
     id: 3016,
+    name: "KERIPIK BELUT KRIUK",
+    price: 35000,
+    image: keripikBelutKriuk,
+    description: "Keripik belut kriuk dengan tekstur renyah dan rasa gurih khas",
+    category: "Keripik",
+    weight: "235 gr"
+  },
+  {
+    id: 3017,
     name: "KERIPIK BELUT CRISPY",
-    price: 42000,
+    price: 36000,
     image: keripikBelutCrispy,
     description: "Keripik belut crispy dengan tekstur sangat renyah dan gurih",
     category: "Keripik",
     weight: "235 gr"
   },
   {
-    id: 3017,
+    id: 3018,
     name: "KERIPIK PARE",
     price: 20500,
     image: keripikPare,
@@ -227,7 +236,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "285 gr"
   },
   {
-    id: 3018,
+    id: 3019,
     name: "LANTING BAWANG SUPER",
     price: 12500,
     image: lantingBawangSuper,
@@ -236,7 +245,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3019,
+    id: 3020,
     name: "POTEL TUMBAR UNYIL",
     price: 12500,
     image: potelTumbarUnyil,
@@ -245,7 +254,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3020,
+    id: 3021,
     name: "LANTING MANIS PEDAS",
     price: 11500,
     image: lantingManisPedas,
@@ -255,7 +264,7 @@ export const keripikProducts: KeripikProduct[] = [
   },
   // Produk tambahan (3021-3060)
   {
-    id: 3021,
+    id: 3022,
     name: "POTEL TUMBAR",
     price: 13500,
     image: potelTumbar,
@@ -264,7 +273,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3022,
+    id: 3023,
     name: "LANTING MP MINI",
     price: 11000,
     image: lantingMpMini,
@@ -273,7 +282,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3023,
+    id: 3024,
     name: "LANTING UDANG PEDAS",
     price: 13500,
     image: lantingUdangPedas,
@@ -282,7 +291,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3024,
+    id: 3025,
     name: "TALES STIK",
     price: 15500,
     image: talesStik,
@@ -291,7 +300,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3025,
+    id: 3026,
     name: "MIX NUT",
     price: 19000,
     image: mixNut,
@@ -300,7 +309,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "475 gr"
   },
   {
-    id: 3026,
+    id: 3027,
     name: "BALOK PEDAS",
     price: 14000,
     image: balokPedas,
@@ -309,7 +318,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "490 gr"
   },
   {
-    id: 3027,
+    id: 3028,
     name: "BALOK ASIN",
     price: 14000,
     image: balokAsin,
@@ -318,7 +327,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "490 gr"
   },
   {
-    id: 3028,
+    id: 3029,
     name: "MAKARONI BANTAT PEDAS",
     price: 12000,
     image: makaroniBantatPedas,
@@ -327,7 +336,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "290 gr"
   },
   {
-    id: 3029,
+    id: 3030,
     name: "BREM DAVRONAS",
     price: 18500,
     image: bremDavronas,
@@ -336,7 +345,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "33 biji"
   },
   {
-    id: 3030,
+    id: 3031,
     name: "SINGKONG KEJU",
     price: 17500,
     image: singkongKeju,
@@ -345,7 +354,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3031,
+    id: 3032,
     name: "TWIST PEDAS",
     price: 14500,
     image: twistPedas,
@@ -354,7 +363,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3032,
+    id: 3033,
     name: "POTATO MINI KEJU",
     price: 15500,
     image: potatoMiniKeju,
@@ -363,7 +372,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "230 gr"
   },
   {
-    id: 3033,
+    id: 3034,
     name: "SUPER ROLL PANDAN",
     price: 9000,
     image: potatoMiniKeju,
@@ -372,7 +381,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "185 gr"
   },
   {
-    id: 3034,
+    id: 3035,
     name: "POTATO SAOS",
     price: 12750,
     image: potatoSaos,
@@ -381,7 +390,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "180 gr"
   },
   {
-    id: 3035,
+    id: 3036,
     name: "MAKARONI ASIN",
     price: 11500,
     image: makaroniAsin,
@@ -390,7 +399,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "235 gr"
   },
   {
-    id: 3036,
+    id: 3037,
     name: "MAKARONI RUJAK CINCIN",
     price: 13000,
     image: makaroniRujukCincin,
@@ -399,7 +408,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "235 gr"
   },
   {
-    id: 3037,
+    id: 3038,
     name: "RAMBAK BALADO",
     price: 19500,
     image: rambakBalado,
@@ -408,7 +417,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "80 gr"
   },
   {
-    id: 3038,
+    id: 3039,
     name: "RAMBAK BULAT",
     price: 21000,
     image: rambakBulat,
@@ -417,7 +426,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "80 gr"
   },
   {
-    id: 3039,
+    id: 3040,
     name: "RENGGINAN BAWANG",
     price: 18500,
     image: rengginanBawang,
@@ -426,7 +435,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "235 gr"
   },
   {
-    id: 3040,
+    id: 3041,
     name: "RENGGINAN TERASI",
     price: 23000,
     image: rengginanTerasi,
@@ -435,7 +444,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "285 gr"
   },
   {
-    id: 3041,
+    id: 3042,
     name: "SINGKONG BAKAR BALADO",
     price: 16500,
     image: singkongBakarBalado,
@@ -444,7 +453,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "240 gr"
   },
   {
-    id: 3042,
+    id: 3043,
     name: "TENGIRI BULAT",
     price: 27500,
     image: tengiriBulat,
@@ -453,7 +462,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "180 gr"
   },
   {
-    id: 3043,
+    id: 3044,
     name: "TENGIRI PENCENG",
     price: 27500,
     image: tengiriPenceng,
@@ -462,7 +471,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "180 gr"
   },
   {
-    id: 3044,
+    id: 3045,
     name: "CIPIR IKAN",
     price: 12500,
     image: cipirIkan,
@@ -471,7 +480,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "205 gr"
   },
   {
-    id: 3045,
+    id: 3046,
     name: "OPAK PEDAS",
     price: 15500,
     image: opakPedas,
@@ -480,7 +489,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "230 gr"
   },
   {
-    id: 3046,
+    id: 3047,
     name: "SLONDOK KRIBO PEDAS",
     price: 14000,
     image: slondokKriboPedas,
@@ -489,7 +498,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "280 gr"
   },
   {
-    id: 3047,
+    id: 3048,
     name: "CERIPING GETUK HITAM SR",
     price: 22500,
     image: ceripingGetukHitamSr,
@@ -498,7 +507,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "260 gr"
   },
   {
-    id: 3048,
+    id: 3049,
     name: "CERIPING GETUK KUNING MANIS PEDAS",
     price: 16000,
     image: ceripingGetukKuningManisPedas,
@@ -507,7 +516,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "330 gr"
   },
   {
-    id: 3049,
+    id: 3050,
     name: "CERIPING GETUK HITAM",
     price: 17500,
     image: ceripingGetukHitam,
@@ -516,7 +525,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "330 gr"
   },
   {
-    id: 3050,
+    id: 3051,
     name: "STIK CUMI HITAM",
     price: 15000,
     image: stikCumiHitam,
@@ -525,7 +534,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "180 gr"
   },
   {
-    id: 3051,
+    id: 3052,
     name: "SLONDOK UDANG",
     price: 19000,
     image: slondokUdang,
@@ -534,7 +543,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "230 gr"
   },
   {
-    id: 3052,
+    id: 3053,
     name: "CAKAR AYAM TOP",
     price: 42500,
     image: cakarAyamTop,
@@ -543,7 +552,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "185 gr"
   },
   {
-    id: 3053,
+    id: 3054,
     name: "SINGKONG ORLIN EXTRA HOT",
     price: 13000,
     image: singkongOrlinExtraHot,
@@ -552,7 +561,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "150 gr"
   },
   {
-    id: 3054,
+    id: 3055,
     name: "SLONDOK KERITING",
     price: 19000,
     image: slondokKeriting,
@@ -561,7 +570,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "280 gr"
   },
   {
-    id: 3055,
+    id: 3056,
     name: "KACANG ATOM KROMA",
     price: 18000,
     image: kacangAtomKroma,
@@ -570,7 +579,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "340 gr"
   },
   {
-    id: 3056,
+    id: 3057,
     name: "PILLOW MINI COKLAT",
     price: 13500,
     image: pillowMiniCoklat,
@@ -579,7 +588,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "290 gr"
   },
   {
-    id: 3057,
+    id: 3058,
     name: "CERIPING GADUNG",
     price: 21000,
     image: ceripingGadung,
@@ -588,7 +597,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "280 gr"
   },
   {
-    id: 3058,
+    id: 3059,
     name: "KERUPUK KOIN UDANG",
     price: 16000,
     image: kerupukKoinUdang,
@@ -597,7 +606,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "180 gr"
   },
   {
-    id: 3059,
+    id: 3060,
     name: "SUKUN BULAT",
     price: 20000,
     image: sukuBulat,
@@ -606,7 +615,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "280 gr"
   },
   {
-    id: 3060,
+    id: 3061,
     name: "USUS AYAM SUPER",
     price: 45000,
     image: ususAyamSuper,
@@ -615,7 +624,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "235 gr"
   },
   {
-    id: 3061,
+    id: 3062,
     name: "SARANG MADU",
     price: 16500,
     image: sarangMadu,
@@ -624,7 +633,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "235 gr"
   },
   {
-    id: 3062,
+    id: 3063,
     name: "KERIPIK PARU SUPER",
     price: 62000,
     image: keripikParuSuper,
@@ -633,7 +642,7 @@ export const keripikProducts: KeripikProduct[] = [
     weight: "250 gr"
   },
   {
-    id: 3063,
+    id: 3064,
     name: "INTIP MADU 58",
     price: 12000,
     image: intipMadu58,
