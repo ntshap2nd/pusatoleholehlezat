@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus, Eye } from "lucide-react";
 
 // Generic interface for kiloan products
@@ -41,6 +41,12 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
   const [selectedWeight, setSelectedWeight] = useState(product.weightOptions[0]);
   const [quantity, setQuantity] = useState(1);
 
+  // Reset selectedWeight saat product berubah
+  useEffect(() => {
+    setSelectedWeight(product.weightOptions[0]);
+    setQuantity(1);
+  }, [product]);
+
   const totalPrice = selectedWeight.price * quantity;
 
   const handleAddToCart = () => {
@@ -61,7 +67,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
   return (
     <div className="group bg-amber-700 rounded-xl p-3 sm:p-4 shadow-lg border border-amber-600 relative">
       {/* Product Image */}
-      <div 
+      <div
         className="aspect-square bg-amber-600 rounded-lg mb-3 overflow-hidden relative cursor-pointer"
         onClick={() => onViewDetail?.(product)}
       >
@@ -70,7 +76,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        
+
         {/* Eye Icon Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
           <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -82,7 +88,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
         <h3 className="font-bold text-white text-sm sm:text-base leading-tight line-clamp-2">
           {product.name}
         </h3>
-        
+
         {/* Quick Add Buttons - Popular Weights */}
         <div className="space-y-2">
           <label className="text-white text-xs sm:text-sm font-medium block">Pilih Berat:</label>
@@ -91,11 +97,10 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
               <button
                 key={option.weight}
                 onClick={() => setSelectedWeight(option)}
-                className={`px-2 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 ${
-                  selectedWeight.weight === option.weight
+                className={`px-2 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 ${selectedWeight.weight === option.weight
                     ? 'bg-orange-500 text-white shadow-lg scale-105'
                     : 'bg-white text-amber-700 hover:bg-orange-100'
-                }`}
+                  }`}
               >
                 {option.label}
               </button>
@@ -112,7 +117,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
         <div className="space-y-2">
           <label className="text-white text-xs sm:text-sm font-medium block">Jumlah:</label>
           <div className="flex items-center justify-center space-x-3">
-            <button 
+            <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
               className="w-8 h-8 bg-white text-amber-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-100 transition-colors"
             >
@@ -121,7 +126,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
             <span className="text-white text-lg font-bold min-w-[24px] text-center">
               {quantity}
             </span>
-            <button 
+            <button
               onClick={() => setQuantity(quantity + 1)}
               className="w-8 h-8 bg-white text-amber-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-100 transition-colors"
             >
@@ -139,7 +144,7 @@ export default function SnackKiloanCard({ product, onAddToCart, onViewDetail }: 
         </div>
 
         {/* Add to Cart Button */}
-        <button 
+        <button
           type="button"
           onClick={(e) => {
             e.preventDefault();

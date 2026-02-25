@@ -97,7 +97,7 @@ import kondangFoodWedangSerai from "@/assets/image/Minuman Instan/KONDANG FOOD W
 
 // Product categories (ordered to match Home page)
 const categories = [
-  "Kue Kering", 
+  "Kue Kering",
   "Keripik",
   "Permen & Manisan",
   "Bakpia dan Kue Basah",
@@ -220,7 +220,7 @@ const products: Product[] = [
   {
     id: 12,
     name: "BAGELEN SISIR SPECIAL",
-    price: 27000,
+    price: 27500,
     image: bagelenSisirSpecial,
     description: "Bagelen sisir special dengan desain unik dan rasa yang lezat",
     category: "Kue Kering",
@@ -253,7 +253,7 @@ const products: Product[] = [
     category: "Kue Kering",
     weight: "235 g"
   },
-  
+
   // Minuman Instan
   {
     id: 41,
@@ -271,7 +271,7 @@ const products: Product[] = [
     description: "Teh celup dengan aroma melati yang menenangkan dan segar",
     category: "Minuman Instan"
   },
-  
+
   // Permen
   {
     id: 51,
@@ -289,7 +289,7 @@ const products: Product[] = [
     description: "Permen mint segar untuk menyegarkan napas dan tenggorokan",
     category: "Permen"
   },
-  
+
   // Kacang-kacangan
   {
     id: 61,
@@ -315,7 +315,7 @@ const products: Product[] = [
     description: "Kacang bawang renyah dengan bumbu yang meresap dan gurih",
     category: "Kacang-kacangan"
   },
-  
+
   // Lain-lain
   {
     id: 71,
@@ -325,7 +325,7 @@ const products: Product[] = [
     description: "Camilan tradisional yang renyah dan gurih, cocok untuk segala usia",
     category: "Lain-lain"
   },
-  
+
   // Bakpia & Kue Basah Products
   {
     id: 81,
@@ -781,7 +781,7 @@ const products: Product[] = [
   {
     id: 131,
     name: "KONDANG FOOD KULIT MANGGIS",
-    price: 13500,
+    price: 14500,
     image: kondangFoodKulitManggis,
     description: "Minuman herbal kulit manggis Kondang Food dengan manfaat antioksidan",
     category: "Minuman Instan",
@@ -790,7 +790,7 @@ const products: Product[] = [
   {
     id: 132,
     name: "KONDANG FOOD DAUN KELOR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodDaunKelor,
     description: "Minuman herbal daun kelor Kondang Food yang kaya nutrisi",
     category: "Minuman Instan",
@@ -907,7 +907,7 @@ const products: Product[] = [
   {
     id: 145,
     name: "KONDANG FOOD SEKOTENG PLASTIK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodSekotengPlastik,
     description: "Sekoteng Kondang Food dalam kemasan plastik yang mudah disajikan",
     category: "Minuman Instan",
@@ -916,7 +916,7 @@ const products: Product[] = [
   {
     id: 146,
     name: "KONDANG FOOD BERAS KENCUR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodBerasKencur,
     description: "Minuman beras kencur Kondang Food yang segar dan menyehatkan",
     category: "Minuman Instan",
@@ -925,7 +925,7 @@ const products: Product[] = [
   {
     id: 147,
     name: "KONDANG FOOD BIR PLETOK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodBirPletok,
     description: "Bir pletok Kondang Food dengan rasa rempah yang khas Jakarta",
     category: "Minuman Instan",
@@ -934,7 +934,7 @@ const products: Product[] = [
   {
     id: 148,
     name: "KONDANG FOOD JAHE MERAH",
-    price: 20500,
+    price: 22000,
     image: kondangFoodJaheMerah,
     description: "Jahe merah Kondang Food yang hangat dan berkhasiat untuk kesehatan",
     category: "Minuman Instan",
@@ -943,7 +943,7 @@ const products: Product[] = [
   {
     id: 149,
     name: "KONDANG FOOD WEDANG SERAI",
-    price: 20500,
+    price: 22000,
     image: kondangFoodWedangSerai,
     description: "Wedang serai Kondang Food yang harum dan menyegarkan",
     category: "Minuman Instan",
@@ -958,11 +958,11 @@ interface ProductCategoriesProps {
   onCartClick: () => void;
 }
 
-export default function ProductCategories({ 
-  onAddToCart, 
-  searchQuery, 
-  cartItems, 
-  onCartClick 
+export default function ProductCategories({
+  onAddToCart,
+  searchQuery,
+  cartItems,
+  onCartClick
 }: ProductCategoriesProps) {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
 
@@ -993,13 +993,13 @@ export default function ProductCategories({
   // Filter products based on search query and selected category
   const filteredProducts = useMemo(() => {
     let filtered = products;
-    
+
     // Filter by category
     if (selectedCategory !== "Semua") {
       if (selectedCategory === "Bakpia & Kue Basah") {
         // Include both "Bakpia & Kue Basah" and "Kue Basah" categories
-        filtered = filtered.filter(product => 
-          product.category === "Bakpia & Kue Basah" || 
+        filtered = filtered.filter(product =>
+          product.category === "Bakpia & Kue Basah" ||
           product.category === "Kue Basah"
         );
       } else {
@@ -1009,7 +1009,7 @@ export default function ProductCategories({
       // For "Semua" category, get 10 random products from different categories
       filtered = getRandomProducts(products, 10);
     }
-    
+
     // Filter by search query (only if not "Semua" or if search query exists)
     if (searchQuery && selectedCategory !== "Semua") {
       filtered = filtered.filter(product =>
@@ -1026,7 +1026,7 @@ export default function ProductCategories({
       );
       filtered = getRandomProducts(searchFiltered, 10);
     }
-    
+
     return filtered;
   }, [selectedCategory, searchQuery]);
 
@@ -1046,15 +1046,14 @@ export default function ProductCategories({
           <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-4">
             <button
               onClick={() => setSelectedCategory("Semua")}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all ${
-                selectedCategory === "Semua"
-                  ? "bg-orange-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === "Semua"
+                ? "bg-orange-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
             >
               Semua
             </button>
-            
+
             {/* Category buttons matching your UI design */}
             {['Kue Kering', 'Keripik', 'Permen & Manisan', 'Bakpia dan Kue Basah', 'Kacang-kacangan', 'Snack Kiloan', 'Minuman', 'Lain-lain'].map((category) => {
               // Map display name to actual category name
@@ -1064,16 +1063,15 @@ export default function ProductCategories({
               } else if (category === 'Bakpia dan Kue Basah') {
                 actualCategory = 'Bakpia & Kue Basah'; // Keep existing product category for filtering
               }
-              
+
               return (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(actualCategory)}
-                  className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all ${
-                    selectedCategory === actualCategory
-                      ? "bg-orange-500 text-white"
-                      : "bg-white text-gray-700 hover:bg-gray-100"
-                  }`}
+                  className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === actualCategory
+                    ? "bg-orange-500 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
+                    }`}
                 >
                   {category}
                 </button>
@@ -1093,20 +1091,20 @@ export default function ProductCategories({
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    
+
                     {/* Weight Badge - Top Left */}
                     {product.weight && (
                       <div className="absolute top-2 left-2 bg-white bg-opacity-90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-gray-800 shadow-md">
                         {product.weight}
                       </div>
                     )}
-                    
+
                     {/* Add Button with Quantity Control */}
                     <div className="absolute bottom-2 right-2">
                       {(() => {
                         const cartItem = cartItems.find(item => item.id === product.id);
                         const currentQuantity = cartItem ? cartItem.quantity : 0;
-                        
+
                         if (currentQuantity === 0) {
                           return (
                             <button
@@ -1161,7 +1159,7 @@ export default function ProductCategories({
                     <h3 className="font-bold text-white text-sm leading-tight line-clamp-2">
                       {product.name}
                     </h3>
-                    
+
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-bold text-white">
                         Rp{product.price.toLocaleString('id-ID')}

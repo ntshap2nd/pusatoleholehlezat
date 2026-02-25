@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Plus, Minus } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SnackKiloanProduct, SnackKiloanCartItem } from "./SnackKiloanCard";
 
 interface SnackKiloanDetailModalProps {
@@ -11,14 +11,22 @@ interface SnackKiloanDetailModalProps {
   onAddToCart: (item: SnackKiloanCartItem) => void;
 }
 
-export default function SnackKiloanDetailModal({ 
-  product, 
-  isOpen, 
-  onClose, 
-  onAddToCart 
+export default function SnackKiloanDetailModal({
+  product,
+  isOpen,
+  onClose,
+  onAddToCart
 }: SnackKiloanDetailModalProps) {
   const [selectedWeight, setSelectedWeight] = useState(product?.weightOptions[0] || { weight: 0.25, price: 0, label: "1/4 kg" });
   const [quantity, setQuantity] = useState(1);
+
+  // Reset selectedWeight dan quantity setiap kali product berubah
+  useEffect(() => {
+    if (product?.weightOptions[0]) {
+      setSelectedWeight(product.weightOptions[0]);
+      setQuantity(1);
+    }
+  }, [product]);
 
   if (!product) return null;
 
@@ -77,7 +85,7 @@ export default function SnackKiloanDetailModal({
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 {product.name}
               </h2>
-              
+
               <div className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
                 {product.category}
               </div>
@@ -96,11 +104,10 @@ export default function SnackKiloanDetailModal({
                     <button
                       key={option.weight}
                       onClick={() => setSelectedWeight(option)}
-                      className={`px-3 py-3 rounded-lg text-sm font-bold transition-all duration-200 ${
-                        selectedWeight.weight === option.weight
+                      className={`px-3 py-3 rounded-lg text-sm font-bold transition-all duration-200 ${selectedWeight.weight === option.weight
                           ? 'bg-orange-500 text-white shadow-lg scale-105 ring-2 ring-orange-300'
                           : 'bg-gray-100 text-gray-700 hover:bg-orange-100 hover:text-orange-700'
-                      }`}
+                        }`}
                     >
                       <div className="font-bold">{option.label}</div>
                       <div className="text-xs mt-1">

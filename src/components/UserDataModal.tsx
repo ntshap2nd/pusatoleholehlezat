@@ -24,10 +24,10 @@ interface UserDataModalProps {
   onRemoveItem?: (id: number) => void;
 }
 
-export default function UserDataModal({ 
-  isOpen, 
-  onClose, 
-  cartItems, 
+export default function UserDataModal({
+  isOpen,
+  onClose,
+  cartItems,
   onCheckoutComplete,
   onUpdateQuantity,
   onRemoveItem
@@ -48,20 +48,20 @@ export default function UserDataModal({
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
       document.body.style.height = '100%';
-      
+
       // Add viewport meta optimization for mobile
       const viewport = document.querySelector('meta[name="viewport"]');
       if (viewport) {
         viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
       }
     }
-    
+
     return () => {
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
       document.body.style.height = '';
-      
+
       // Restore original viewport
       const viewport = document.querySelector('meta[name="viewport"]');
       if (viewport) {
@@ -88,10 +88,10 @@ export default function UserDataModal({
     if (field === 'whatsappNumber') {
       // Remove all non-numeric characters
       const cleaned = value.replace(/\D/g, '');
-      
+
       // Limit to 15 digits (international format max)
       const limited = cleaned.slice(0, 15);
-      
+
       setUserData(prev => ({
         ...prev,
         [field]: limited
@@ -106,7 +106,7 @@ export default function UserDataModal({
 
   const validateForm = () => {
     const { fullName, fullAddress, city, whatsappNumber } = userData;
-    
+
     if (!fullName.trim()) {
       toast({
         title: "Nama lengkap diperlukan",
@@ -115,7 +115,7 @@ export default function UserDataModal({
       });
       return false;
     }
-    
+
     if (!fullAddress.trim()) {
       toast({
         title: "Alamat lengkap diperlukan",
@@ -124,7 +124,7 @@ export default function UserDataModal({
       });
       return false;
     }
-    
+
     if (!city.trim()) {
       toast({
         title: "Kota/Kabupaten diperlukan",
@@ -133,7 +133,7 @@ export default function UserDataModal({
       });
       return false;
     }
-    
+
     if (!whatsappNumber.trim()) {
       toast({
         title: "Nomor WhatsApp diperlukan",
@@ -142,7 +142,7 @@ export default function UserDataModal({
       });
       return false;
     }
-    
+
     // Basic WhatsApp number validation
     const cleanNumber = whatsappNumber.replace(/\D/g, '');
     if (cleanNumber.length < 10 || cleanNumber.length > 15) {
@@ -153,7 +153,7 @@ export default function UserDataModal({
       });
       return false;
     }
-    
+
     return true;
   };
 
@@ -162,63 +162,64 @@ export default function UserDataModal({
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('id-ID', {
       day: 'numeric',
-      month: 'long', 
+      month: 'long',
       year: 'numeric'
     });
     const formattedTime = currentDate.toLocaleTimeString('id-ID', {
       hour: '2-digit',
       minute: '2-digit'
     });
-    
+
     let message = "🛒 *PESANAN TOKO LEZAT ONLINE*\n";
     message += `📅 *Tanggal:* ${formattedDate} pukul ${formattedTime}\n`;
     message += "═══════════════════════════\n\n";
-    
+
     message += "👤 *INFORMASI PEMESAN:*\n";
     message += `� Nama: ${fullName}\n`;
     message += `🏠 Alamat: ${fullAddress}\n`;
     message += `🏙️ Kota: ${city}\n`;
     message += `📱 WhatsApp: ${whatsappNumber}\n`;
     message += "═══════════════════════════\n\n";
-    
+
     message += "🛍️ *DETAIL PESANAN:*\n";
     cartItems.forEach((item, index) => {
       const itemTotal = item.price * item.quantity;
       message += `${index + 1}. *${item.name}*\n`;
       message += `   Qty: ${item.quantity} × ${formatPrice(item.price)} = *${formatPrice(itemTotal)}*\n\n`;
     });
-    
+
     message += "═══════════════════════════\n";
     message += `💰 *TOTAL PEMBAYARAN: ${formatPrice(totalPrice)}*\n`;
     message += "═══════════════════════════\n\n";
+    message += "+ biaya Rp5.000 untuk packing kecil, Rp10.000 untuk packing besar menyesuaikan jumlah pesanan\n\n";
     message += "✅ Mohon konfirmasi pesanan saya.\n";
     message += "🙏 Terima kasih!\n\n";
     message += "_Pesan otomatis dari website Toko Lezat_";
-    
+
     return message;
   };
 
   const handleCheckout = async () => {
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const message = generateWhatsAppMessage();
       const whatsappNumber = "6285122614122"; // Admin's WhatsApp number
-      
+
       console.log('Generated message:', message); // Debug log
-      
+
       // Primary method: Try URL encoding with WhatsApp Web/App
       try {
         const encodedMessage = encodeURIComponent(message);
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        
+
         console.log('WhatsApp URL:', whatsappURL); // Debug log
-        
+
         // Open WhatsApp with pre-filled message
         window.open(whatsappURL, '_blank');
-        
+
         // Also copy to clipboard as backup
         try {
           await navigator.clipboard.writeText(message);
@@ -233,7 +234,7 @@ export default function UserDataModal({
             description: "Pesan telah dikirim ke WhatsApp.",
           });
         }
-        
+
         // Clear form and close modal
         setUserData({
           fullName: "",
@@ -241,42 +242,42 @@ export default function UserDataModal({
           city: "",
           whatsappNumber: ""
         });
-        
+
         onCheckoutComplete();
         onClose();
-        
+
       } catch (urlError) {
         console.error('URL method failed, trying clipboard only:', urlError);
-        
+
         // Fallback: clipboard only
         try {
           await navigator.clipboard.writeText(message);
-          
+
           toast({
             title: "Pesan disalin!",
             description: "Pesan telah disalin ke clipboard. Silakan buka WhatsApp dan paste pesan.",
           });
-          
+
           // Open WhatsApp without message
           setTimeout(() => {
             window.open(`https://wa.me/${whatsappNumber}`, '_blank');
           }, 1000);
-          
+
         } catch (clipboardError) {
           console.error('Both methods failed:', clipboardError);
-          
+
           // Manual fallback
           toast({
             title: "Mohon salin pesan secara manual",
             description: "Pesan akan ditampilkan di layar untuk disalin manual.",
             variant: "destructive"
           });
-          
+
           // Show message in alert for manual copy
           alert(`Silakan salin pesan berikut ke WhatsApp:\n\n${message}`);
           window.open(`https://wa.me/${whatsappNumber}`, '_blank');
         }
-        
+
         // Clear form and close modal
         setUserData({
           fullName: "",
@@ -284,11 +285,11 @@ export default function UserDataModal({
           city: "",
           whatsappNumber: ""
         });
-        
+
         onCheckoutComplete();
         onClose();
       }
-      
+
     } catch (error) {
       console.error('Checkout failed:', error);
       toast({
@@ -332,7 +333,7 @@ export default function UserDataModal({
                   <X className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-gray-600 stroke-[2.5]" />
                 </Button>
               </CardHeader>
-              
+
               {/* SCROLLABLE CONTENT AREA */}
               <div className="flex-1 overflow-y-auto overscroll-contain scroll-smooth">
                 <div className="p-3 sm:p-4 space-y-2.5 sm:space-y-3 pb-3">
@@ -353,7 +354,7 @@ export default function UserDataModal({
                         autoComplete="name"
                       />
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="fullAddress" className="text-xs sm:text-sm font-semibold text-gray-700 block mb-1 flex items-center gap-1.5">
                         <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-600 flex-shrink-0" />
@@ -376,7 +377,7 @@ export default function UserDataModal({
                         </span>
                       </p>
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="city" className="text-xs sm:text-sm font-semibold text-gray-700 block mb-1 flex items-center gap-1.5">
                         <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-600 flex-shrink-0" />
@@ -392,7 +393,7 @@ export default function UserDataModal({
                         autoComplete="address-level2"
                       />
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="whatsappNumber" className="text-xs sm:text-sm font-semibold text-gray-700 block mb-1 flex items-center gap-1.5">
                         <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-600 flex-shrink-0" />
@@ -434,7 +435,7 @@ export default function UserDataModal({
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* Mobile-optimized Order Summary - SCROLLABLE VERSION */}
                   <div className="border border-gray-200 rounded-xl overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 shadow-sm">
                     <div className="bg-gradient-to-r from-red-600 to-orange-600 px-3 sm:px-4 py-2">
@@ -443,14 +444,14 @@ export default function UserDataModal({
                         <span className="truncate">Ringkasan Pesanan ({cartItems.length} item{cartItems.length > 1 ? 's' : ''})</span>
                       </h3>
                     </div>
-                    
+
                     {/* Scrollable Item List with max-height */}
                     <div className="relative">
                       {/* Gradient fade at top */}
                       {cartItems.length > 3 && (
                         <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
                       )}
-                      
+
                       <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-white space-y-2 max-h-[160px] sm:max-h-[180px] overflow-y-auto overscroll-contain">
                         {cartItems.map((item, index) => (
                           <div key={item.id} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm border-b border-gray-100 pb-2 last:border-0 last:pb-0">
@@ -502,13 +503,13 @@ export default function UserDataModal({
                           </div>
                         ))}
                       </div>
-                      
+
                       {/* Gradient fade at bottom */}
                       {cartItems.length > 3 && (
                         <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-t from-white to-transparent pointer-events-none" />
                       )}
                     </div>
-                    
+
                     {/* Total - More Prominent */}
                     <div className="bg-gradient-to-r from-red-600 to-orange-600 px-3 sm:px-4 py-2.5 sm:py-3">
                       <div className="flex justify-between items-center gap-2">
@@ -519,10 +520,10 @@ export default function UserDataModal({
                   </div>
                 </div>
               </div>
-              
+
               {/* STICKY FOOTER - CHECKOUT BUTTON */}
               <div className="flex-shrink-0 p-2.5 sm:p-3 border-t border-gray-200 bg-gradient-to-t from-white via-white to-transparent shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] pb-[env(safe-area-inset-bottom)]">
-                <Button 
+                <Button
                   onClick={handleCheckout}
                   disabled={isSubmitting}
                   className="w-full h-11 sm:h-12 bg-gradient-to-r from-green-600 via-green-600 to-green-700 hover:from-green-700 hover:via-green-700 hover:to-green-800 active:scale-[0.98] text-white font-bold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 touch-manipulation disabled:opacity-50 disabled:cursor-not-allowed"
@@ -545,7 +546,7 @@ export default function UserDataModal({
                     </div>
                   )}
                 </Button>
-                
+
                 <p className="text-[10px] sm:text-xs text-gray-500 text-center mt-1.5 sm:mt-2 flex items-center justify-center gap-1 px-2">
                   <Copy className="w-2.5 h-2.5 sm:w-3 sm:h-3 flex-shrink-0" />
                   <span className="truncate">Pesan akan disalin otomatis ke clipboard</span>

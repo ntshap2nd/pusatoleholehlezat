@@ -27,7 +27,7 @@ export interface PalmaProduct {
 export const palmaProducts: PalmaProduct[] = [
   {
     id: 5001,
-    name: "PALMA BOLU PANGGANG - Original",
+    name: "PALMA BAKED - Original",
     price: 28000,
     image: palmaBoluPanggangOriginal,
     description: "Bolu panggang Palma original dengan rasa klasik yang lembut",
@@ -36,7 +36,7 @@ export const palmaProducts: PalmaProduct[] = [
   },
   {
     id: 5002,
-    name: "PALMA BOLU PANGGANG - Pandan",
+    name: "PALMA BAKED - Pandan",
     price: 28000,
     image: palmaBoluPanggangPandan,
     description: "Bolu panggang Palma rasa pandan dengan warna hijau natural",
@@ -45,7 +45,7 @@ export const palmaProducts: PalmaProduct[] = [
   },
   {
     id: 5003,
-    name: "PALMA BOLU PANGGANG - Mocca",
+    name: "PALMA BAKED - Mocca",
     price: 28000,
     image: palmaBoluPanggangMocca,
     description: "Bolu panggang Palma rasa mocca dengan perpaduan rasa kopi dan coklat",
@@ -64,7 +64,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5005,
     name: "PALMA BOLU PANGGANG TABUNG MARMER",
-    price: 31500,
+    price: 32500,
     image: palmaBoluPanggang2,
     description: "Bolu panggang Palma marmer dengan perpaduan rasa coklat dan vanilla",
     category: "PALMA",
@@ -73,7 +73,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5006,
     name: "PALMA BOLU PANGGANG TABUNG PANDAN",
-    price: 31500,
+    price: 32500,
     image: palmaBoluPanggang3,
     description: "Bolu panggang Palma rasa pandan dengan aroma pandan yang harum",
     category: "PALMA",
@@ -91,7 +91,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5008,
     name: "PALMA SAKURA CHEESE TPL",
-    price: 31000,
+    price: 33000,
     image: palmaSakuraCheese,
     description: "Kue sakura cheese Palma dengan rasa keju yang creamy dan tekstur lembut",
     category: "PALMA",
@@ -100,7 +100,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5009,
     name: "PALMA PUTRI SALJU TPL",
-    price: 42000,
+    price: 36500,
     image: palmaPutriSalju,
     description: "Kue putri salju Palma dengan tekstur lembut dan taburan gula halus",
     category: "PALMA",
@@ -109,7 +109,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5010,
     name: "PALMA KASTENGEL TPL",
-    price: 41000,
+    price: 47500,
     image: palmaKastengel,
     description: "Kastengel Palma dengan rasa keju yang kuat dan tekstur renyah",
     category: "PALMA",
@@ -118,7 +118,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5011,
     name: "PALMA NASTAR KEJU SPC RPL",
-    price: 39500,
+    price: 41500,
     image: palmaNastarKeju,
     description: "Nastar keju special Palma dengan isian nanas dan taburan keju",
     category: "PALMA",
@@ -127,7 +127,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5012,
     name: "PALMA WAFER GULUNG KEJU SPC TPL",
-    price: 43000,
+    price: 45000,
     image: palmaWaferGulungKeju,
     description: "Wafer gulung keju Palma special dengan krim keju yang lezat",
     category: "PALMA",
@@ -136,7 +136,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5013,
     name: "PALMA WAFER GULUNG COKLAT SPC TPL",
-    price: 43000,
+    price: 45000,
     image: palmaWaferGulungCoklat,
     description: "Wafer gulung coklat Palma special dengan krim coklat yang manis",
     category: "PALMA",
@@ -145,7 +145,7 @@ export const palmaProducts: PalmaProduct[] = [
   {
     id: 5014,
     name: "PALMA DONAT WARNA TPL",
-    price: 32500,
+    price: 35000,
     image: palmaDonatWarna,
     description: "Donat warna warni Palma dengan topping gula warna yang menarik",
     category: "PALMA",

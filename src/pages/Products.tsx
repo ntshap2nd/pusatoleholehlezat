@@ -234,7 +234,7 @@ const products: Product[] = [
   {
     id: 13,
     name: "BAGELEN SISIR SPECIAL",
-    price: 27000,
+    price: 27500,
     image: bagelenSisirSpecial,
     description: "Bagelen sisir special dengan desain unik dan rasa yang lezat",
     category: "Kue Kering",
@@ -695,7 +695,7 @@ const products: Product[] = [
   {
     id: 62,
     name: "KOPI TEMANGGUNG ARABIKA SUMBING",
-    price: 36500,
+    price: 38000,
     image: kopiTemanggungArabikaSumbing,
     description: "Kopi arabika Sumbing dari Temanggung dengan profil rasa yang istimewa",
     category: "Minuman Instan",
@@ -704,7 +704,7 @@ const products: Product[] = [
   {
     id: 63,
     name: "KOPI TEMANGGUNG BLEND",
-    price: 34000,
+    price: 35000,
     image: kopiTemanggungBlend,
     description: "Kopi blend Temanggung dengan perpaduan arabika dan robusta yang seimbang",
     category: "Minuman Instan",
@@ -740,7 +740,7 @@ const products: Product[] = [
   {
     id: 67,
     name: "KONDANG FOOD KULIT MANGGIS",
-    price: 13500,
+    price: 14500,
     image: kondangFoodKulitManggis,
     description: "Minuman herbal kulit manggis Kondang Food dengan manfaat antioksidan",
     category: "Minuman Instan",
@@ -749,7 +749,7 @@ const products: Product[] = [
   {
     id: 68,
     name: "KONDANG FOOD DAUN KELOR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodDaunKelor,
     description: "Minuman herbal daun kelor Kondang Food yang kaya nutrisi",
     category: "Minuman Instan",
@@ -866,7 +866,7 @@ const products: Product[] = [
   {
     id: 81,
     name: "KONDANG FOOD SEKOTENG PLASTIK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodSekotengPlastik,
     description: "Sekoteng Kondang Food dalam kemasan plastik yang mudah disajikan",
     category: "Minuman Instan",
@@ -875,7 +875,7 @@ const products: Product[] = [
   {
     id: 82,
     name: "KONDANG FOOD BERAS KENCUR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodBerasKencur,
     description: "Minuman beras kencur Kondang Food yang segar dan menyehatkan",
     category: "Minuman Instan",
@@ -884,7 +884,7 @@ const products: Product[] = [
   {
     id: 83,
     name: "KONDANG FOOD BIR PLETOK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodBirPletok,
     description: "Bir pletok Kondang Food dengan rasa rempah yang khas Jakarta",
     category: "Minuman Instan",
@@ -893,7 +893,7 @@ const products: Product[] = [
   {
     id: 84,
     name: "KONDANG FOOD JAHE MERAH",
-    price: 20500,
+    price: 22000,
     image: kondangFoodJaheMerah,
     description: "Jahe merah Kondang Food yang hangat dan berkhasiat untuk kesehatan",
     category: "Minuman Instan",
@@ -902,7 +902,7 @@ const products: Product[] = [
   {
     id: 85,
     name: "KONDANG FOOD WEDANG SERAI",
-    price: 20500,
+    price: 22000,
     image: kondangFoodWedangSerai,
     description: "Wedang serai Kondang Food yang harum dan menyegarkan",
     category: "Minuman Instan",

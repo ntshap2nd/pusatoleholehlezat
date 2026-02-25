@@ -224,7 +224,7 @@ const products: Product[] = [
   {
     id: 12,
     name: "BAGELEN SISIR SPECIAL",
-    price: 27000,
+    price: 27500,
     image: bagelenSisirSpecial,
     description: "Bagelen sisir special dengan desain unik dan rasa yang lezat",
     category: "Kue Kering",
@@ -712,7 +712,7 @@ const products: Product[] = [
   {
     id: 66,
     name: "KONDANG FOOD KULIT MANGGIS",
-    price: 13500,
+    price: 14500,
     image: kondangFoodKulitManggis,
     description: "Minuman herbal kulit manggis Kondang Food dengan manfaat antioksidan",
     category: "Minuman Instan",
@@ -721,7 +721,7 @@ const products: Product[] = [
   {
     id: 67,
     name: "KONDANG FOOD DAUN KELOR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodDaunKelor,
     description: "Minuman herbal daun kelor Kondang Food yang kaya nutrisi",
     category: "Minuman Instan",
@@ -838,7 +838,7 @@ const products: Product[] = [
   {
     id: 80,
     name: "KONDANG FOOD SEKOTENG PLASTIK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodSekotengPlastik,
     description: "Sekoteng Kondang Food dalam kemasan plastik yang mudah disajikan",
     category: "Minuman Instan",
@@ -847,7 +847,7 @@ const products: Product[] = [
   {
     id: 81,
     name: "KONDANG FOOD BERAS KENCUR",
-    price: 13500,
+    price: 14500,
     image: kondangFoodBerasKencur,
     description: "Minuman beras kencur Kondang Food yang segar dan menyehatkan",
     category: "Minuman Instan",
@@ -856,7 +856,7 @@ const products: Product[] = [
   {
     id: 82,
     name: "KONDANG FOOD BIR PLETOK",
-    price: 20500,
+    price: 22000,
     image: kondangFoodBirPletok,
     description: "Bir pletok Kondang Food dengan rasa rempah yang khas Jakarta",
     category: "Minuman Instan",
@@ -865,7 +865,7 @@ const products: Product[] = [
   {
     id: 83,
     name: "KONDANG FOOD JAHE MERAH",
-    price: 20500,
+    price: 22000,
     image: kondangFoodJaheMerah,
     description: "Jahe merah Kondang Food yang hangat dan berkhasiat untuk kesehatan",
     category: "Minuman Instan",
@@ -874,7 +874,7 @@ const products: Product[] = [
   {
     id: 84,
     name: "KONDANG FOOD WEDANG SERAI",
-    price: 20500,
+    price: 22000,
     image: kondangFoodWedangSerai,
     description: "Wedang serai Kondang Food yang harum dan menyegarkan",
     category: "Minuman Instan",
@@ -906,14 +906,14 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === "Semua" || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchQuery.toLowerCase());
+      product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   const filteredSnackKiloanProducts = snackKiloanProducts.filter(product => {
     const matchesCategory = selectedCategory === "Semua" || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchQuery.toLowerCase());
+      product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -939,7 +939,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       weight: `${item.weightKg}kg`,
       id: typeof item.id === 'string' ? parseInt((item.id as string).replace('sk', '')) + 1000 : item.id as number
     };
-    
+
     // Use parent's onAddToCart handler
     onAddToCart(cartItem as Product, cartItem.quantity);
 
@@ -978,8 +978,8 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
 
   return (
     <div className="min-h-screen bg-background">
-      <Header 
-        cartItemCount={totalItems} 
+      <Header
+        cartItemCount={totalItems}
         onCartClick={openCart}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -998,11 +998,10 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-colors whitespace-nowrap ${
-                selectedCategory === category 
-                  ? 'bg-orange-600 text-white' 
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold transition-colors whitespace-nowrap ${selectedCategory === category
+                ? 'bg-orange-600 text-white'
+                : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
             >
               {category}
             </button>
@@ -1021,23 +1020,23 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  
+
                   {/* Weight Badge - Top Left */}
                   {product.weight && (
                     <div className="absolute top-1 left-1 sm:top-2 sm:left-2 bg-white bg-opacity-90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded text-xs font-bold text-gray-800 shadow-md">
                       {product.weight}
                     </div>
                   )}
-                  
+
                   {/* Add Button with Quantity Control */}
                   <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2">
                     {(() => {
                       const cartItem = cartItems.find(item => item.id === product.id);
                       const currentQuantity = cartItem ? cartItem.quantity : 0;
-                      
+
                       if (currentQuantity === 0) {
                         return (
-                          <button 
+                          <button
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
@@ -1129,7 +1128,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
 
       {/* Floating Checkout Button */}
       {totalItems > 0 && (
-        <FloatingCheckoutButton 
+        <FloatingCheckoutButton
           cartItems={cartItems}
           onCheckoutClick={handleCheckout}
           onCartClick={openCart}
@@ -1137,7 +1136,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       )}
 
       {/* Cart Modal */}
-      <CartModal 
+      <CartModal
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}
@@ -1146,7 +1145,7 @@ export default function ProductsPage({ cartItems, onAddToCart, onRemoveFromCart,
       />
 
       {/* User Data Modal */}
-      <UserDataModal 
+      <UserDataModal
         isOpen={isUserDataModalOpen}
         onClose={() => setIsUserDataModalOpen(false)}
         cartItems={cartItems}

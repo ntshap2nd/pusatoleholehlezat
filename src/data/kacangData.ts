@@ -24,7 +24,7 @@ export const kacangProducts: KacangProduct[] = [
   {
     id: 4001,
     name: "KACANG BOGOR TPL",
-    price: 28000,
+    price: 50000,
     image: kacangBogorTpl,
     description: "Kacang bogor premium dengan rasa gurih dan tekstur renyah yang khas",
     category: "Kacang-kacangan",
@@ -33,38 +33,38 @@ export const kacangProducts: KacangProduct[] = [
   {
     id: 4002,
     name: "KACANG CAMPUR TPL",
-    price: 32000,
+    price: 17000,
     image: kacangCampurTpl,
     description: "Kacang campur dengan berbagai varian kacang pilihan yang gurih",
     category: "Kacang-kacangan",
-    weight: "250 gr"
+    weight: "400 gr"
   },
   {
     id: 4003,
     name: "KACANG JEPANG BAWANG TPL",
-    price: 29000,
+    price: 30500,
     image: kacangJepangBawangTpl,
     description: "Kacang jepang dengan bumbu bawang yang harum dan gurih",
     category: "Kacang-kacangan",
-    weight: "250 gr"
+    weight: "450 gr"
   },
   {
     id: 4004,
     name: "KACANG KORO ASIN TPL",
-    price: 24000,
+    price: 15500,
     image: kacangKoroAsinTpl,
     description: "Kacang koro asin dengan rasa asin yang pas dan tekstur renyah",
     category: "Kacang-kacangan",
-    weight: "250 gr"
+    weight: "400 gr"
   },
   {
     id: 4005,
     name: "KACANG PEDAS LYNA",
-    price: 30000,
+    price: 29000,
     image: kacangPedasLyna,
     description: "Kacang pedas Lyna dengan bumbu pedas yang mantap dan nagih",
     category: "Kacang-kacangan",
-    weight: "250 gr"
+    weight: "35 biji"
   }
 ];
 

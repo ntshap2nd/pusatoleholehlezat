@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import bannerWebShop1 from "@/assets/Banner_Web-Shop_Banner 1.jpg";
 import bannerWebShop2 from "@/assets/Banner_Web-Shop_Banner 2.jpg";
 import bannerWebShop4 from "@/assets/Banner_Web-Shop_Banner 4.jpg";
-import bannerFreeOngkirDesember from "@/assets/LEZAT_Socmed-1_Banner Web - Free Ongkir Desember.jpg";
+
 
 const bannerSlides = [
   {
@@ -22,11 +22,7 @@ const bannerSlides = [
     image: bannerWebShop4,
     category: "Lain-lain" // Tas Belanja -> Lain-lain
   },
-  {
-    id: 5,
-    image: bannerFreeOngkirDesember,
-    category: null // Promo Free Ongkir Desember
-  }
+
 ];
 
 export default function BannerSlider() {
@@ -38,7 +34,7 @@ export default function BannerSlider() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
     }, 8000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -70,20 +66,18 @@ export default function BannerSlider() {
         {bannerSlides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-              index === currentSlide 
-                ? 'opacity-100 transform translate-x-0 z-10' 
+            className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentSlide
+                ? 'opacity-100 transform translate-x-0 z-10'
                 : index < currentSlide
-                ? 'opacity-0 transform -translate-x-full z-0'
-                : 'opacity-0 transform translate-x-full z-0'
-            }`}
+                  ? 'opacity-0 transform -translate-x-full z-0'
+                  : 'opacity-0 transform translate-x-full z-0'
+              }`}
             style={{ willChange: index === currentSlide ? 'opacity, transform' : 'auto' }}
           >
             {/* Background Image - Full Cover tanpa crop */}
-            <div 
-              className={`absolute inset-0 flex items-center justify-center bg-black ${
-                slide.category ? 'cursor-pointer' : ''
-              }`}
+            <div
+              className={`absolute inset-0 flex items-center justify-center bg-black ${slide.category ? 'cursor-pointer' : ''
+                }`}
               onClick={() => handleBannerClick(slide.category)}
             >
               <img
@@ -104,7 +98,7 @@ export default function BannerSlider() {
         >
           <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
         </button>
-        
+
         <button
           onClick={nextSlide}
           className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm active:scale-95"
@@ -119,11 +113,10 @@ export default function BannerSlider() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all duration-200 ${
-                index === currentSlide 
-                  ? 'bg-white w-6 h-2 sm:w-8' 
+              className={`rounded-full transition-all duration-200 ${index === currentSlide
+                  ? 'bg-white w-6 h-2 sm:w-8'
                   : 'bg-white/50 w-2 h-2'
-              }`}
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

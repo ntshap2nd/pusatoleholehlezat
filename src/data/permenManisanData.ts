@@ -38,7 +38,7 @@ export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2001,
     name: "JELLY INACO MIKA",
-    price: 26000,
+    price: 24500,
     image: jellyInacoMika,
     description: "Jelly Inaco dalam kemasan mika dengan berbagai varian rasa buah yang segar",
     category: "Permen & Manisan",
@@ -74,7 +74,7 @@ export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2005,
     name: "PERMEN ASEM TPL",
-    price: 26500,
+    price: 28000,
     image: permenAsemTpl,
     description: "Permen asem dengan rasa asam manis yang menyegarkan",
     category: "Permen & Manisan",
@@ -83,7 +83,7 @@ export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2006,
     name: "PERMEN SIRSAK TPL",
-    price: 26500,
+    price: 28000,
     image: permenSirsakTpl,
     description: "Permen sirsak dengan rasa buah sirsak yang autentik",
     category: "Permen & Manisan",
@@ -92,7 +92,7 @@ export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2007,
     name: "PERMEN NANAS TPL",
-    price: 26500,
+    price: 28000,
     image: permenNanasTpl,
     description: "Permen nanas dengan rasa buah nanas yang segar dan manis",
     category: "Permen & Manisan",
@@ -101,7 +101,7 @@ export const permenManisanProducts: PermenManisanProduct[] = [
   {
     id: 2008,
     name: "PERMEN MANGGA TPL",
-    price: 26500,
+    price: 28000,
     image: permenManggaTpl,
     description: "Permen mangga dengan rasa buah mangga yang manis dan segar",
     category: "Permen & Manisan",

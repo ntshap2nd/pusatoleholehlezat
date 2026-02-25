@@ -31,6 +31,7 @@ import singkongKeju from "@/assets/image/KERIPIK/SINGKONG KEJU.jpg";
 import twistPedas from "@/assets/image/KERIPIK/TWIST PEDAS.jpg";
 import potatoMiniKeju from "@/assets/image/KERIPIK/POTATO MINI KEJU.jpg";
 import potatoSaos from "@/assets/image/KERIPIK/POTATO SAOS.jpg";
+import superRollPandan from "@/assets/image/KERIPIK/SUPER ROLL PANDAN.jpg";
 import makaroniAsin from "@/assets/image/KERIPIK/MAKARONI ASIN.jpg";
 import makaroniRujukCincin from "@/assets/image/KERIPIK/MAKARONI RUJAK CINCIN.jpg";
 import rambakBalado from "@/assets/image/KERIPIK/RAMBAK BALADO.jpg";
@@ -375,7 +376,7 @@ export const keripikProducts: KeripikProduct[] = [
     id: 3034,
     name: "SUPER ROLL PANDAN",
     price: 9000,
-    image: potatoMiniKeju,
+    image: superRollPandan,
     description: "Keripik super roll pandan dengan aroma pandan yang harum",
     category: "Keripik",
     weight: "185 gr"
@@ -383,7 +384,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3035,
     name: "POTATO SAOS",
-    price: 12750,
+    price: 13000,
     image: potatoSaos,
     description: "Keripik potato saos dengan rasa saos yang lezat dan gurih",
     category: "Keripik",
@@ -410,7 +411,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3038,
     name: "RAMBAK BALADO",
-    price: 19500,
+    price: 21000,
     image: rambakBalado,
     description: "Keripik rambak balado dengan bumbu balado yang pedas dan gurih",
     category: "Keripik",
@@ -455,7 +456,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3043,
     name: "TENGIRI BULAT",
-    price: 27500,
+    price: 28000,
     image: tengiriBulat,
     description: "Keripik tengiri bulat dengan rasa ikan tengiri yang gurih",
     category: "Keripik",
@@ -464,7 +465,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3044,
     name: "TENGIRI PENCENG",
-    price: 27500,
+    price: 28000,
     image: tengiriPenceng,
     description: "Keripik tengiri penceng dengan bentuk miring yang unik",
     category: "Keripik",
@@ -509,7 +510,7 @@ export const keripikProducts: KeripikProduct[] = [
   {
     id: 3049,
     name: "CERIPING GETUK KUNING MANIS PEDAS",
-    price: 16000,
+    price: 17500,
     image: ceripingGetukKuningManisPedas,
     description: "Keripik ceriping getuk kuning dengan rasa manis pedas",
     category: "Keripik",

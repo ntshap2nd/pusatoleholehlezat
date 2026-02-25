@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Plus, Minus, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Product {
   id: number;
@@ -21,14 +21,19 @@ interface ProductDetailModalProps {
   currentQuantity: number;
 }
 
-export default function ProductDetailModal({ 
-  product, 
-  isOpen, 
-  onClose, 
+export default function ProductDetailModal({
+  product,
+  isOpen,
+  onClose,
   onAddToCart,
-  currentQuantity 
+  currentQuantity
 }: ProductDetailModalProps) {
   const [quantity, setQuantity] = useState(1);
+
+  // Reset quantity saat product berubah
+  useEffect(() => {
+    setQuantity(1);
+  }, [product]);
 
   if (!product) return null;
 
@@ -75,7 +80,7 @@ export default function ProductDetailModal({
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 {product.name}
               </h2>
-              
+
               <div className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
                 {product.category}
               </div>

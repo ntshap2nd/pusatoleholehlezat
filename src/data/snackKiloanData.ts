@@ -1,6 +1,6 @@
 /**
  * Data Produk Snack Kiloan - Toko Lezat
- * Total: 60 Produk
+ * Total: 104 Produk (75 existing + 29 baru)
  */
 
 // Import gambar produk snack kiloan
@@ -68,6 +68,53 @@ import kacangGoberPedas from "@/assets/image/SNACK KILOAN/KACANG GOBER PEDAS.jpg
 import kacangOvenGelatikKroma from "@/assets/image/SNACK KILOAN/KACANG OVEN GELATIK KROMA.jpg";
 import kacangOvenSatelit from "@/assets/image/SNACK KILOAN/KACANG OVEN SATELIT.jpg";
 import kacangTelurPolos from "@/assets/image/SNACK KILOAN/KACANG TELUR POLOS.jpg";
+
+// Import 14 produk baru (batch 3)
+import astorDuoBantalVanila from "@/assets/image/SNACK KILOAN/ASTOR DUO BANTAL VANILA.jpg";
+import astorDuoStikCoklatOrange from "@/assets/image/SNACK KILOAN/ASTOR DUO STIK COKLAT ORANGE.jpg";
+import astorDuoStikCoklatKacang from "@/assets/image/SNACK KILOAN/ASTOR DUO STIK COKLAT KACANG.jpg";
+import astorBarcelonaBlueberry from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA BLUEBERRY.jpg";
+import astorBarcelonaCoklat from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA COKLAT.jpg";
+import cendolkejuIndosari from "@/assets/image/SNACK KILOAN/CENDOLKEJU INDOSARI.jpg";
+import koroPedasJaipong from "@/assets/image/SNACK KILOAN/KORO PEDAS JAIPONG.jpg";
+import makaroniKejuLos from "@/assets/image/SNACK KILOAN/MAKARONI KEJU LOS.jpg";
+import cendolKejuPr from "@/assets/image/SNACK KILOAN/CENDOL KEJU PR.jpg";
+import koroAsinJaipong from "@/assets/image/SNACK KILOAN/KORO ASIN JAIPONG.jpg";
+import kwaciMatahari from "@/assets/image/SNACK KILOAN/KWACI MATAHARI.jpg";
+import pillowMiniCoklat from "@/assets/image/SNACK KILOAN/PILLOW MINI COKLAT.jpg";
+import koroJagungBakarJaipong from "@/assets/image/SNACK KILOAN/KORO JAGUNG BAKAR JAIPONG.jpg";
+import kwaciPutih from "@/assets/image/SNACK KILOAN/KWACI PUTIH.jpg";
+
+// Import 29 produk baru (batch 4 - Snack Kiloan)
+import makaroniBaladoLos from "@/assets/image/SNACK KILOAN/MAKARONI BALADO LOS.jpg";
+import cendolKejuSarikaya from "@/assets/image/SNACK KILOAN/CENDOL KEJU SARIKAYA.jpg";
+import astorBarcelonaVanilla from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA VANILLA.jpg";
+import astorBarcelonaPandan from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA PANDAN.jpg";
+import astorBarcelonaSusu from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA SUSU.jpg";
+import astorBarcelonaStrawberry from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA STRAWBERRY.jpg";
+import astorBarcelonaGreenteaCoklat from "@/assets/image/SNACK KILOAN/ASTOR BARCELONA GREENTEA COKLAT.jpg";
+import astorDuoBantalCoklat from "@/assets/image/SNACK KILOAN/ASTOR DUO BANTAL COKLAT.jpg";
+import astorDuoBantalPandan from "@/assets/image/SNACK KILOAN/ASTOR DUO BANTAL PANDAN.jpg";
+import astorDuoBantalStrawberry from "@/assets/image/SNACK KILOAN/ASTOR DUO BANTAL STRAWBERRY.jpg";
+import astorDuoBantalBlueberry from "@/assets/image/SNACK KILOAN/ASTOR DUO BANTAL BLUEBERRY.jpg";
+import jdpBasrengPedas from "@/assets/image/SNACK KILOAN/JDP BASRENG PEDAS.jpg";
+import jdpBastikHotLimau from "@/assets/image/SNACK KILOAN/JDP BASTIK HOT LIMAU.jpg";
+import cheeseRing from "@/assets/image/SNACK KILOAN/CHEESE RING.jpg";
+import tesStikBalado from "@/assets/image/SNACK KILOAN/TES STIK BALADO.jpg";
+import tesStikKeju from "@/assets/image/SNACK KILOAN/TES STIK KEJU.jpg";
+import tesTwistJagungBakar from "@/assets/image/SNACK KILOAN/TES TWIST JAGUNG BAKAR.jpg";
+import tesSingkongBakarBalado from "@/assets/image/SNACK KILOAN/TES SINGKONG BAKAR BALADO.jpg";
+import talesJaringBalado from "@/assets/image/SNACK KILOAN/TALES JARING BALADO.jpg";
+import tesSingkongBakarKeju from "@/assets/image/SNACK KILOAN/TES SINGKONG BAKAR KEJU.jpg";
+import tesTortillaBbq from "@/assets/image/SNACK KILOAN/TES TORTILLA BBQ.jpg";
+import tesTortillaMieGoreng from "@/assets/image/SNACK KILOAN/TES TORTILLA MIE GORENG.jpg";
+import tesTwistCornBbq from "@/assets/image/SNACK KILOAN/TES TWIST CORN BBQ.jpg";
+import jdpBastikAsin from "@/assets/image/SNACK KILOAN/JDP BASTIK ASIN.jpg";
+import talesJaringAsin from "@/assets/image/SNACK KILOAN/TALES JARING ASIN.jpg";
+import cocoCrunchCoklat from "@/assets/image/SNACK KILOAN/COCO CRUNCH COKLAT.jpg";
+import cocoCrunch2In1 from "@/assets/image/SNACK KILOAN/COCO CRUNCH 2 IN 1.jpg";
+import cikoBallCoklat from "@/assets/image/SNACK KILOAN/CIKO BALL COKLAT.jpg";
+import eggRollMondelVanilla from "@/assets/image/SNACK KILOAN/EGG ROLL MONDEL VANILLA.jpg";
 
 export interface SnackKiloanProduct {
   id: number;
@@ -180,14 +227,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1008,
     name: "JAMUR TIRAM POLOS",
-    basePrice: 75000,
+    basePrice: 88000,
     image: jamurTiramPolos,
     description: "Jamur tiram polos crispy dengan tekstur renyah dan gurih",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 18750, label: "1/4 kg" },
-      { weight: 0.5, price: 37500, label: "1/2 kg" },
-      { weight: 1, price: 75000, label: "1 kg" }
+      { weight: 0.25, price: 22000, label: "1/4 kg" },
+      { weight: 0.5, price: 44000, label: "1/2 kg" },
+      { weight: 1, price: 88000, label: "1 kg" }
     ]
   },
   {
@@ -206,40 +253,40 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1010,
     name: "JAMUR KUPING POLOS",
-    basePrice: 75000,
+    basePrice: 88000,
     image: jamurKupingPolos,
     description: "Jamur kuping polos dengan tekstur kenyal dan rasa gurih",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 18750, label: "1/4 kg" },
-      { weight: 0.5, price: 37500, label: "1/2 kg" },
-      { weight: 1, price: 75000, label: "1 kg" }
+      { weight: 0.25, price: 22000, label: "1/4 kg" },
+      { weight: 0.5, price: 44000, label: "1/2 kg" },
+      { weight: 1, price: 88000, label: "1 kg" }
     ]
   },
   {
     id: 1011,
     name: "SPRING ROLL CHILI SARIKAYA",
-    basePrice: 82500,
+    basePrice: 83500,
     image: springRollChiliSarikaya,
     description: "Spring roll chili sarikaya dengan rasa pedas dan manis yang pas",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 20625, label: "1/4 kg" },
-      { weight: 0.5, price: 41250, label: "1/2 kg" },
-      { weight: 1, price: 82500, label: "1 kg" }
+      { weight: 0.25, price: 20875, label: "1/4 kg" },
+      { weight: 0.5, price: 41750, label: "1/2 kg" },
+      { weight: 1, price: 83500, label: "1 kg" }
     ]
   },
   {
     id: 1012,
     name: "SPRING ROLL BIASA SARIKAYA",
-    basePrice: 82500,
+    basePrice: 83500,
     image: springRollBiasaSarikaya,
     description: "Spring roll biasa sarikaya dengan rasa original yang lezat",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 20625, label: "1/4 kg" },
-      { weight: 0.5, price: 41250, label: "1/2 kg" },
-      { weight: 1, price: 82500, label: "1 kg" }
+      { weight: 0.25, price: 20875, label: "1/4 kg" },
+      { weight: 0.5, price: 41750, label: "1/2 kg" },
+      { weight: 1, price: 83500, label: "1 kg" }
     ]
   },
 
@@ -299,14 +346,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1017,
     name: "LIDAH KUCING COKLAT",
-    basePrice: 89000,
+    basePrice: 92000,
     image: lidahKucingCoklat,
     description: "Lidah kucing coklat dengan rasa coklat yang lembut dan renyah",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 22250, label: "1/4 kg" },
-      { weight: 0.5, price: 44500, label: "1/2 kg" },
-      { weight: 1, price: 89000, label: "1 kg" }
+      { weight: 0.25, price: 23000, label: "1/4 kg" },
+      { weight: 0.5, price: 46000, label: "1/2 kg" },
+      { weight: 1, price: 92000, label: "1 kg" }
     ]
   },
   {
@@ -390,14 +437,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1024,
     name: "PASTEL ABON SARIKAYA",
-    basePrice: 99000,
+    basePrice: 100000,
     image: pastelAbonSarikaya,
     description: "Pastel abon Sarikaya dengan isian abon daging yang gurih",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 24750, label: "1/4 kg" },
-      { weight: 0.5, price: 49500, label: "1/2 kg" },
-      { weight: 1, price: 99000, label: "1 kg" }
+      { weight: 0.25, price: 25000, label: "1/4 kg" },
+      { weight: 0.5, price: 50000, label: "1/2 kg" },
+      { weight: 1, price: 100000, label: "1 kg" }
     ]
   },
   {
@@ -429,27 +476,27 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1027,
     name: "SAMOSA MANIS PEDAS SARIKAYA",
-    basePrice: 100000,
+    basePrice: 102000,
     image: samosaManisPedasSarikaya,
     description: "Samosa manis pedas Sarikaya dengan bumbu khas yang menggugah selera",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 25000, label: "1/4 kg" },
-      { weight: 0.5, price: 50000, label: "1/2 kg" },
-      { weight: 1, price: 100000, label: "1 kg" }
+      { weight: 0.25, price: 25500, label: "1/4 kg" },
+      { weight: 0.5, price: 51000, label: "1/2 kg" },
+      { weight: 1, price: 102000, label: "1 kg" }
     ]
   },
   {
     id: 1028,
     name: "SUMPIA SMS SARIKAYA",
-    basePrice: 92000,
+    basePrice: 98500,
     image: sumpiaSmsSarikaya,
     description: "Sumpia SMS Sarikaya dengan isian gurih dan renyah",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 23000, label: "1/4 kg" },
-      { weight: 0.5, price: 46000, label: "1/2 kg" },
-      { weight: 1, price: 92000, label: "1 kg" }
+      { weight: 0.25, price: 24625, label: "1/4 kg" },
+      { weight: 0.5, price: 49250, label: "1/2 kg" },
+      { weight: 1, price: 98500, label: "1 kg" }
     ]
   },
   {
@@ -507,27 +554,40 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1033,
     name: "EMPING KREPUS",
-    basePrice: 135000,
+    basePrice: 125000,
     image: empingKrepus,
     description: "Emping krepus dengan tekstur renyah dan rasa gurih tradisional",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 33750, label: "1/4 kg" },
-      { weight: 0.5, price: 67500, label: "1/2 kg" },
-      { weight: 1, price: 135000, label: "1 kg" }
+      { weight: 0.25, price: 31250, label: "1/4 kg" },
+      { weight: 0.5, price: 62500, label: "1/2 kg" },
+      { weight: 1, price: 125000, label: "1 kg" }
     ]
   },
   {
     id: 1034,
     name: "EMPING MANIS",
-    basePrice: 85000,
+    basePrice: 75000,
     image: empingManis,
     description: "Emping manis dengan perpaduan rasa manis dan gurih yang pas",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 21250, label: "1/4 kg" },
-      { weight: 0.5, price: 42500, label: "1/2 kg" },
-      { weight: 1, price: 85000, label: "1 kg" }
+      { weight: 0.25, price: 18750, label: "1/4 kg" },
+      { weight: 0.5, price: 37500, label: "1/2 kg" },
+      { weight: 1, price: 75000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1100,
+    name: "EMPING MANIS PEDAS",
+    basePrice: 75000,
+    image: empingManis,
+    description: "Emping manis pedas dengan perpaduan rasa manis, gurih dan sedikit pedas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 18750, label: "1/4 kg" },
+      { weight: 0.5, price: 37500, label: "1/2 kg" },
+      { weight: 1, price: 75000, label: "1 kg" }
     ]
   },
   {
@@ -690,14 +750,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1047,
     name: "KORO KULIT JAIPONG",
-    basePrice: 45000,
+    basePrice: 53000,
     image: koroKulitJaipong,
     description: "Koro kulit jaipong dengan tekstur renyah dan bumbu gurih",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 11250, label: "1/4 kg" },
-      { weight: 0.5, price: 22500, label: "1/2 kg" },
-      { weight: 1, price: 45000, label: "1 kg" }
+      { weight: 0.25, price: 13250, label: "1/4 kg" },
+      { weight: 0.5, price: 26500, label: "1/2 kg" },
+      { weight: 1, price: 53000, label: "1 kg" }
     ]
   },
   {
@@ -742,66 +802,66 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1051,
     name: "KACANG BANDUNG ECO ROSO",
-    basePrice: 44000,
+    basePrice: 47500,
     image: kacangBandungEcoRoso,
     description: "Kacang Bandung Eco Roso dengan rasa gurih yang ekonomis",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 11000, label: "1/4 kg" },
-      { weight: 0.5, price: 22000, label: "1/2 kg" },
-      { weight: 1, price: 44000, label: "1 kg" }
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
     ]
   },
   {
     id: 1052,
     name: "KACANG BANDUNG NINJA",
-    basePrice: 63000,
+    basePrice: 66500,
     image: kacangBandungNinja,
     description: "Kacang Bandung Ninja dengan bumbu pedas yang menggigit",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 15750, label: "1/4 kg" },
-      { weight: 0.5, price: 31500, label: "1/2 kg" },
-      { weight: 1, price: 63000, label: "1 kg" }
+      { weight: 0.25, price: 16625, label: "1/4 kg" },
+      { weight: 0.5, price: 33250, label: "1/2 kg" },
+      { weight: 1, price: 66500, label: "1 kg" }
     ]
   },
   {
     id: 1053,
     name: "KACANG SANGAN TR",
-    basePrice: 40000,
+    basePrice: 42000,
     image: kacangSanganTr,
     description: "Kacang sangan TR dengan proses sangrai tradisional",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 10000, label: "1/4 kg" },
-      { weight: 0.5, price: 20000, label: "1/2 kg" },
-      { weight: 1, price: 40000, label: "1 kg" }
+      { weight: 0.25, price: 10500, label: "1/4 kg" },
+      { weight: 0.5, price: 21000, label: "1/2 kg" },
+      { weight: 1, price: 42000, label: "1 kg" }
     ]
   },
   {
     id: 1054,
     name: "KACANG KULIT",
-    basePrice: 57000,
+    basePrice: 62500,
     image: kacangKulit,
     description: "Kacang kulit klasik dengan tekstur renyah alami",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 14250, label: "1/4 kg" },
-      { weight: 0.5, price: 28500, label: "1/2 kg" },
-      { weight: 1, price: 57000, label: "1 kg" }
+      { weight: 0.25, price: 15625, label: "1/4 kg" },
+      { weight: 0.5, price: 31250, label: "1/2 kg" },
+      { weight: 1, price: 62500, label: "1 kg" }
     ]
   },
   {
     id: 1055,
     name: "KACANG JEPANG BAWANG KROMA",
-    basePrice: 59000,
+    basePrice: 61000,
     image: kacangJepangBawangKroma,
     description: "Kacang jepang bawang Kroma dengan aroma bawang yang kuat",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 14750, label: "1/4 kg" },
-      { weight: 0.5, price: 29500, label: "1/2 kg" },
-      { weight: 1, price: 59000, label: "1 kg" }
+      { weight: 0.25, price: 15250, label: "1/4 kg" },
+      { weight: 0.5, price: 30500, label: "1/2 kg" },
+      { weight: 1, price: 61000, label: "1 kg" }
     ]
   },
   {
@@ -833,14 +893,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1058,
     name: "KACANG OVEN GELATIK KROMA",
-    basePrice: 58000,
+    basePrice: 60000,
     image: kacangOvenGelatikKroma,
     description: "Kacang oven Gelatik Kroma dengan proses oven yang sempurna",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 14500, label: "1/4 kg" },
-      { weight: 0.5, price: 29000, label: "1/2 kg" },
-      { weight: 1, price: 58000, label: "1 kg" }
+      { weight: 0.25, price: 15000, label: "1/4 kg" },
+      { weight: 0.5, price: 30000, label: "1/2 kg" },
+      { weight: 1, price: 60000, label: "1 kg" }
     ]
   },
   {
@@ -859,14 +919,575 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1060,
     name: "KACANG TELUR POLOS",
-    basePrice: 48000,
+    basePrice: 52000,
     image: kacangTelurPolos,
     description: "Kacang telur polos dengan lapisan tepung telur yang renyah",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 12000, label: "1/4 kg" },
-      { weight: 0.5, price: 24000, label: "1/2 kg" },
-      { weight: 1, price: 48000, label: "1 kg" }
+      { weight: 0.25, price: 13000, label: "1/4 kg" },
+      { weight: 0.5, price: 26000, label: "1/2 kg" },
+      { weight: 1, price: 52000, label: "1 kg" }
+    ]
+  },
+  // ============ 14 PRODUK BARU (BATCH 3) ============
+  {
+    id: 1061,
+    name: "ASTOR DUO BANTAL VANILA",
+    basePrice: 47500,
+    image: astorDuoBantalVanila,
+    description: "Astor Duo Bantal Vanila dengan rasa vanila yang lembut dan creamy",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1062,
+    name: "ASTOR DUO STIK COKLAT ORANGE",
+    basePrice: 44000,
+    image: astorDuoStikCoklatOrange,
+    description: "Astor Duo Stik dengan perpaduan coklat dan orange yang segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11000, label: "1/4 kg" },
+      { weight: 0.5, price: 22000, label: "1/2 kg" },
+      { weight: 1, price: 44000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1063,
+    name: "ASTOR DUO STIK COKLAT KACANG",
+    basePrice: 47500,
+    image: astorDuoStikCoklatKacang,
+    description: "Astor Duo Stik dengan coklat dan kacang yang gurih",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1064,
+    name: "ASTOR BARCELONA BLUEBERRY",
+    basePrice: 47500,
+    image: astorBarcelonaBlueberry,
+    description: "Astor Barcelona dengan rasa blueberry yang manis dan segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1065,
+    name: "ASTOR BARCELONA COKLAT",
+    basePrice: 47500,
+    image: astorBarcelonaCoklat,
+    description: "Astor Barcelona dengan rasa coklat yang rich dan lezat",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1066,
+    name: "CENDOLKEJU INDOSARI",
+    basePrice: 62000,
+    image: cendolkejuIndosari,
+    description: "Cendol Keju Indosari dengan perpaduan cendol dan keju yang unik",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 15500, label: "1/4 kg" },
+      { weight: 0.5, price: 31000, label: "1/2 kg" },
+      { weight: 1, price: 62000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1067,
+    name: "KORO PEDAS JAIPONG",
+    basePrice: 37500,
+    image: koroPedasJaipong,
+    description: "Koro Pedas Jaipong dengan bumbu pedas yang menggigit",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 9375, label: "1/4 kg" },
+      { weight: 0.5, price: 18750, label: "1/2 kg" },
+      { weight: 1, price: 37500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1068,
+    name: "MAKARONI KEJU LOS",
+    basePrice: 140000,
+    image: makaroniKejuLos,
+    description: "Makaroni Keju Los dengan rasa keju yang gurih dan creamy",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 35000, label: "1/4 kg" },
+      { weight: 0.5, price: 70000, label: "1/2 kg" },
+      { weight: 1, price: 140000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1069,
+    name: "CENDOL KEJU PR",
+    basePrice: 37500,
+    image: cendolKejuPr,
+    description: "Cendol Keju PR dengan tekstur renyah dan rasa keju gurih",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 9375, label: "1/4 kg" },
+      { weight: 0.5, price: 18750, label: "1/2 kg" },
+      { weight: 1, price: 37500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1070,
+    name: "KORO ASIN JAIPONG",
+    basePrice: 31000,
+    image: koroAsinJaipong,
+    description: "Koro Asin Jaipong dengan rasa asin yang pas dan renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 7750, label: "1/4 kg" },
+      { weight: 0.5, price: 15500, label: "1/2 kg" },
+      { weight: 1, price: 31000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1071,
+    name: "KWACI MATAHARI",
+    basePrice: 85000,
+    image: kwaciMatahari,
+    description: "Kwaci Matahari dengan biji bunga matahari yang gurih dan renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 21250, label: "1/4 kg" },
+      { weight: 0.5, price: 42500, label: "1/2 kg" },
+      { weight: 1, price: 85000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1072,
+    name: "PILLOW MINI COKLAT",
+    basePrice: 37500,
+    image: pillowMiniCoklat,
+    description: "Pillow Mini Coklat dengan isian coklat yang lumer di mulut",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 9375, label: "1/4 kg" },
+      { weight: 0.5, price: 18750, label: "1/2 kg" },
+      { weight: 1, price: 37500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1073,
+    name: "KORO JAGUNG BAKAR JAIPONG",
+    basePrice: 34000,
+    image: koroJagungBakarJaipong,
+    description: "Koro Jagung Bakar Jaipong dengan rasa jagung bakar yang khas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 8500, label: "1/4 kg" },
+      { weight: 0.5, price: 17000, label: "1/2 kg" },
+      { weight: 1, price: 34000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1074,
+    name: "KWACI PUTIH",
+    basePrice: 100000,
+    image: kwaciPutih,
+    description: "Kwaci Putih premium dengan rasa gurih dan tekstur renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 25000, label: "1/4 kg" },
+      { weight: 0.5, price: 50000, label: "1/2 kg" },
+      { weight: 1, price: 100000, label: "1 kg" }
+    ]
+  },
+  // ============ 29 PRODUK BARU (BATCH 4 - SNACK KILOAN) ============
+  {
+    id: 1075,
+    name: "MAKARONI BALADO LOS",
+    basePrice: 140000,
+    image: makaroniBaladoLos,
+    description: "Makaroni balado los dengan bumbu balado pedas yang gurih",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 35000, label: "1/4 kg" },
+      { weight: 0.5, price: 70000, label: "1/2 kg" },
+      { weight: 1, price: 140000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1076,
+    name: "CENDOL KEJU SARIKAYA",
+    basePrice: 82000,
+    image: cendolKejuSarikaya,
+    description: "Cendol keju Sarikaya dengan perpaduan cendol dan keju yang lezat",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 20500, label: "1/4 kg" },
+      { weight: 0.5, price: 41000, label: "1/2 kg" },
+      { weight: 1, price: 82000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1077,
+    name: "ASTOR BARCELONA VANILLA",
+    basePrice: 47500,
+    image: astorBarcelonaVanilla,
+    description: "Astor Barcelona dengan rasa vanilla yang lembut dan creamy",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1078,
+    name: "ASTOR BARCELONA PANDAN",
+    basePrice: 47500,
+    image: astorBarcelonaPandan,
+    description: "Astor Barcelona dengan rasa pandan yang harum dan segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1079,
+    name: "ASTOR BARCELONA SUSU",
+    basePrice: 47500,
+    image: astorBarcelonaSusu,
+    description: "Astor Barcelona dengan rasa susu yang creamy dan lezat",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1080,
+    name: "ASTOR BARCELONA STRAWBERRY",
+    basePrice: 47500,
+    image: astorBarcelonaStrawberry,
+    description: "Astor Barcelona dengan rasa strawberry yang manis dan segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1081,
+    name: "ASTOR BARCELONA GREENTEA COKLAT",
+    basePrice: 44000,
+    image: astorBarcelonaGreenteaCoklat,
+    description: "Astor Barcelona dengan perpaduan greentea dan coklat yang unik",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11000, label: "1/4 kg" },
+      { weight: 0.5, price: 22000, label: "1/2 kg" },
+      { weight: 1, price: 44000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1082,
+    name: "ASTOR DUO BANTAL COKLAT",
+    basePrice: 47500,
+    image: astorDuoBantalCoklat,
+    description: "Astor Duo Bantal dengan rasa coklat yang lezat",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1083,
+    name: "ASTOR DUO BANTAL PANDAN",
+    basePrice: 47500,
+    image: astorDuoBantalPandan,
+    description: "Astor Duo Bantal dengan rasa pandan yang harum",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1084,
+    name: "ASTOR DUO BANTAL STRAWBERRY",
+    basePrice: 47500,
+    image: astorDuoBantalStrawberry,
+    description: "Astor Duo Bantal dengan rasa strawberry yang manis",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1085,
+    name: "ASTOR DUO BANTAL BLUEBERRY",
+    basePrice: 47500,
+    image: astorDuoBantalBlueberry,
+    description: "Astor Duo Bantal dengan rasa blueberry yang segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11875, label: "1/4 kg" },
+      { weight: 0.5, price: 23750, label: "1/2 kg" },
+      { weight: 1, price: 47500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1086,
+    name: "JDP BASRENG PEDAS",
+    basePrice: 34000,
+    image: jdpBasrengPedas,
+    description: "JDP Basreng pedas dengan bumbu pedas yang menggigit",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 8500, label: "1/4 kg" },
+      { weight: 0.5, price: 17000, label: "1/2 kg" },
+      { weight: 1, price: 34000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1087,
+    name: "JDP BASTIK HOT LIMAU",
+    basePrice: 52000,
+    image: jdpBastikHotLimau,
+    description: "JDP Bastik Hot Limau dengan rasa pedas dan asam yang segar",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 13000, label: "1/4 kg" },
+      { weight: 0.5, price: 26000, label: "1/2 kg" },
+      { weight: 1, price: 52000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1088,
+    name: "CHEESE RING",
+    basePrice: 46500,
+    image: cheeseRing,
+    description: "Cheese Ring dengan rasa keju yang gurih dan renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11625, label: "1/4 kg" },
+      { weight: 0.5, price: 23250, label: "1/2 kg" },
+      { weight: 1, price: 46500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1089,
+    name: "TES STIK BALADO",
+    basePrice: 45000,
+    image: tesStikBalado,
+    description: "TES Stik Balado dengan bumbu balado pedas yang khas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 11250, label: "1/4 kg" },
+      { weight: 0.5, price: 22500, label: "1/2 kg" },
+      { weight: 1, price: 45000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1090,
+    name: "TES STIK KEJU",
+    basePrice: 59500,
+    image: tesStikKeju,
+    description: "TES Stik Keju dengan rasa keju yang gurih dan creamy",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 14875, label: "1/4 kg" },
+      { weight: 0.5, price: 29750, label: "1/2 kg" },
+      { weight: 1, price: 59500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1091,
+    name: "TES TWIST JAGUNG BAKAR",
+    basePrice: 50000,
+    image: tesTwistJagungBakar,
+    description: "TES Twist Jagung Bakar dengan rasa jagung bakar yang khas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 12500, label: "1/4 kg" },
+      { weight: 0.5, price: 25000, label: "1/2 kg" },
+      { weight: 1, price: 50000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1092,
+    name: "TES SINGKONG BAKAR BALADO",
+    basePrice: 65000,
+    image: tesSingkongBakarBalado,
+    description: "TES Singkong Bakar Balado dengan bumbu balado pedas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 16250, label: "1/4 kg" },
+      { weight: 0.5, price: 32500, label: "1/2 kg" },
+      { weight: 1, price: 65000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1093,
+    name: "TALES JARING BALADO",
+    basePrice: 66000,
+    image: talesJaringBalado,
+    description: "Tales Jaring Balado dengan bumbu balado pedas yang gurih",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 16500, label: "1/4 kg" },
+      { weight: 0.5, price: 33000, label: "1/2 kg" },
+      { weight: 1, price: 66000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1094,
+    name: "TES SINGKONG BAKAR KEJU",
+    basePrice: 67500,
+    image: tesSingkongBakarKeju,
+    description: "TES Singkong Bakar Keju dengan rasa keju yang gurih",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 16875, label: "1/4 kg" },
+      { weight: 0.5, price: 33750, label: "1/2 kg" },
+      { weight: 1, price: 67500, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1095,
+    name: "TES TORTILLA BBQ",
+    basePrice: 76000,
+    image: tesTortillaBbq,
+    description: "TES Tortilla BBQ dengan bumbu barbeque yang smoky",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 19000, label: "1/4 kg" },
+      { weight: 0.5, price: 38000, label: "1/2 kg" },
+      { weight: 1, price: 76000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1096,
+    name: "TES TORTILLA MIE GORENG",
+    basePrice: 76000,
+    image: tesTortillaMieGoreng,
+    description: "TES Tortilla Mie Goreng dengan rasa mie goreng yang khas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 19000, label: "1/4 kg" },
+      { weight: 0.5, price: 38000, label: "1/2 kg" },
+      { weight: 1, price: 76000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1097,
+    name: "TES TWIST CORN BBQ",
+    basePrice: 57000,
+    image: tesTwistCornBbq,
+    description: "TES Twist Corn BBQ dengan perpaduan jagung dan barbeque",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 14250, label: "1/4 kg" },
+      { weight: 0.5, price: 28500, label: "1/2 kg" },
+      { weight: 1, price: 57000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1098,
+    name: "JDP BASTIK ASIN",
+    basePrice: 52000,
+    image: jdpBastikAsin,
+    description: "JDP Bastik Asin dengan rasa asin gurih yang pas",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 13000, label: "1/4 kg" },
+      { weight: 0.5, price: 26000, label: "1/2 kg" },
+      { weight: 1, price: 52000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1099,
+    name: "TALES JARING ASIN",
+    basePrice: 64000,
+    image: talesJaringAsin,
+    description: "Tales Jaring Asin dengan rasa asin gurih yang renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 16000, label: "1/4 kg" },
+      { weight: 0.5, price: 32000, label: "1/2 kg" },
+      { weight: 1, price: 64000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1101,
+    name: "COCO CRUNCH COKLAT",
+    basePrice: 34000,
+    image: cocoCrunchCoklat,
+    description: "Coco Crunch Coklat dengan rasa coklat yang manis dan renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 8500, label: "1/4 kg" },
+      { weight: 0.5, price: 17000, label: "1/2 kg" },
+      { weight: 1, price: 34000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1102,
+    name: "COCO CRUNCH 2 IN 1",
+    basePrice: 34000,
+    image: cocoCrunch2In1,
+    description: "Coco Crunch 2 in 1 dengan dua varian rasa dalam satu kemasan",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 8500, label: "1/4 kg" },
+      { weight: 0.5, price: 17000, label: "1/2 kg" },
+      { weight: 1, price: 34000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1103,
+    name: "CIKO BALL COKLAT",
+    basePrice: 34000,
+    image: cikoBallCoklat,
+    description: "Ciko Ball Coklat dengan bola-bola coklat yang renyah",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 8500, label: "1/4 kg" },
+      { weight: 0.5, price: 17000, label: "1/2 kg" },
+      { weight: 1, price: 34000, label: "1 kg" }
+    ]
+  },
+  {
+    id: 1104,
+    name: "EGG ROLL MONDEL VANILLA",
+    basePrice: 84000,
+    image: eggRollMondelVanilla,
+    description: "Egg Roll Mondel Vanilla dengan rasa vanilla yang lembut",
+    category: "Snack Kiloan",
+    weightOptions: [
+      { weight: 0.25, price: 21000, label: "1/4 kg" },
+      { weight: 0.5, price: 42000, label: "1/2 kg" },
+      { weight: 1, price: 84000, label: "1 kg" }
     ]
   }
 ];
