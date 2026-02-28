@@ -606,14 +606,14 @@ export const snackKiloanProducts: SnackKiloanProduct[] = [
   {
     id: 1036,
     name: "UBUR UBUR AYAM",
-    basePrice: 81000,
+    basePrice: 85000,
     image: uburUburAyam,
     description: "Snack ubur-ubur ayam dengan tekstur unik dan rasa gurih",
     category: "Snack Kiloan",
     weightOptions: [
-      { weight: 0.25, price: 20250, label: "1/4 kg" },
-      { weight: 0.5, price: 40500, label: "1/2 kg" },
-      { weight: 1, price: 81000, label: "1 kg" }
+      { weight: 0.25, price: 21250, label: "1/4 kg" },
+      { weight: 0.5, price: 42500, label: "1/2 kg" },
+      { weight: 1, price: 85000, label: "1 kg" }
     ]
   },
   {

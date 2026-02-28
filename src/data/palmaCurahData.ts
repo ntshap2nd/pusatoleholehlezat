@@ -107,14 +107,14 @@ export const palmaCurahProducts: PalmaCurahProduct[] = [
   {
     id: 6006,
     name: "PALMA BOLA NASTAR SPECIAL",
-    basePrice: 92000,
+    basePrice: 90000,
     image: palmaBolaNavatar,
     description: "Bola nastar special Palma dengan isian nanas yang manis",
     category: "PALMA CURAH",
     weightOptions: [
-      { weight: 0.25, price: 23000, label: "1/4 kg" },
-      { weight: 0.5, price: 46000, label: "1/2 kg" },
-      { weight: 1, price: 92000, label: "1 kg" }
+      { weight: 0.25, price: 22500, label: "1/4 kg" },
+      { weight: 0.5, price: 45000, label: "1/2 kg" },
+      { weight: 1, price: 90000, label: "1 kg" }
     ]
   },
   {
